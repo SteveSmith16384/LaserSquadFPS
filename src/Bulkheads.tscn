@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/models/bulkhead_wall.obj" type="ArrayMesh" id=1]
+
+[node name="Bulkheads" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2292, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47232, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70152, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9278, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.157, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4001, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6293, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null

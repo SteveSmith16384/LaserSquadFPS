@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/synapse_enemy2.obj-18ae86b91a5c439ec96ff32636934d6a.mesh"
+
+[deps]
+
+files=[ "res://.import/synapse_enemy2.obj-18ae86b91a5c439ec96ff32636934d6a.mesh" ]
+
+source_file="res://Assets/models/synapse_enemy2.obj"
+dest_files=[ "res://.import/synapse_enemy2.obj-18ae86b91a5c439ec96ff32636934d6a.mesh", "res://.import/synapse_enemy2.obj-18ae86b91a5c439ec96ff32636934d6a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

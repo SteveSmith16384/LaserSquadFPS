@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Dance_Powder_0.ogg-59e18cb08e801f9f3eaa70e6a9d61477.oggstr"
+
+[deps]
+
+source_file="res://Assets/music/Dance_Powder_0.ogg"
+dest_files=[ "res://.import/Dance_Powder_0.ogg-59e18cb08e801f9f3eaa70e6a9d61477.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

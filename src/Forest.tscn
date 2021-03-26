@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Green_Material.tres" type="Material" id=1]
+[ext_resource path="res://Assets/models/tree.obj" type="ArrayMesh" id=2]
+
+[node name="Forest" type="Spatial"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04825, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.12627, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17452, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.16284, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2111, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2891, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3374, 0, 0 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60595, 0, -1.8936 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6542, 0, -1.8936 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73222, 0, -1.8936 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.78047, 0, -1.8936 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance13" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.76879, 0, -1.8936 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance14" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.817, 0, -1.8936 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance15" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.895, 0, -1.8936 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance16" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9433, 0, -1.8936 )
+cast_shadow = 0
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 1 )

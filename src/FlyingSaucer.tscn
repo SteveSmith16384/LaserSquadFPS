@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/models/flying_saucer.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://FlyingSaucer.gd" type="Script" id=2]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.696367
+height = 0.563238
+
+[node name="FlyingSaucer" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0512037, 0, 0.163851 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13672, 0 )
+shape = SubResource( 1 )
+
+[node name="ChangeDirTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="ActivationTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+[connection signal="timeout" from="ChangeDirTimer" to="." method="_on_ChangeDirTimer_timeout"]
+[connection signal="timeout" from="ActivationTimer" to="." method="_on_ActivationTimer_timeout"]

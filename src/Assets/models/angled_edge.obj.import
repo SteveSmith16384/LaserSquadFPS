@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/angled_edge.obj-33c09795a33711a574126d7ee3723a71.mesh"
+
+[deps]
+
+files=[ "res://.import/angled_edge.obj-33c09795a33711a574126d7ee3723a71.mesh" ]
+
+source_file="res://Assets/models/angled_edge.obj"
+dest_files=[ "res://.import/angled_edge.obj-33c09795a33711a574126d7ee3723a71.mesh", "res://.import/angled_edge.obj-33c09795a33711a574126d7ee3723a71.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

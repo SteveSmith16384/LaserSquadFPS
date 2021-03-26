@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/models/the_bomb.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://TheBomb.gd" type="Script" id=2]
+[ext_resource path="res://Assets/sfx/computerambience.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Assets/sfx/enemyalert.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/sfx/toggle2.wav" type="AudioStream" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.657, 0.392413, 0.657 )
+
+[node name="TheBomb" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0825, 0, 0.150657 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0342292, 0.389856, -0.00545112 )
+shape = SubResource( 1 )
+
+[node name="AudioAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="AudioBlocked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="AudioMoving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )

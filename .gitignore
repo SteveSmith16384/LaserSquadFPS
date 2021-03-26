@@ -1,0 +1,6 @@
+.import/
+.mono/
+export_presets.cfg
+bin/
+*.TMP
+*.ods#

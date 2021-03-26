@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Human/human.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/music/09-Overdrive-Sex-Machine-v0_5.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/backgrounds/background1.png" type="Texture" id=4]
+[ext_resource path="res://IntroScene.gd" type="Script" id=5]
+[ext_resource path="res://Resources/GUI_Theme.tres" type="Theme" id=7]
+[ext_resource path="res://Resources/GUI_Theme_Font_Large.tres" type="Theme" id=8]
+[ext_resource path="res://Assets/logo.png" type="Texture" id=9]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 4 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+glow_enabled = true
+glow_intensity = 8.0
+glow_strength = 1.07
+glow_bloom = 1.0
+glow_hdr_threshold = 1.95
+
+[node name="IntroScene" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="Human" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.59078, 0 )
+
+[node name="LogoSpatial" type="Spatial" parent="."]
+
+[node name="LogoMesh" type="MeshInstance" parent="LogoSpatial"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.613913, -0.192554 )
+cast_shadow = 0
+skeleton = NodePath("")
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.45172 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.583012, 0.48128, 0.654574, -0.771634, 0.0758104, 0.631534, 0.254321, -0.873283, 0.41557, 6.2029, 5.92053, 9.05355 )
+shadow_enabled = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="VersionLabel" type="Label" parent="Node2D"]
+margin_left = 897.066
+margin_top = 570.395
+margin_right = 1001.07
+margin_bottom = 587.395
+theme = ExtResource( 7 )
+text = "VERSION 0.1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsLabel2" type="Label" parent="Node2D"]
+margin_left = 10.7612
+margin_top = 570.395
+margin_right = 649.761
+margin_bottom = 587.395
+theme = ExtResource( 7 )
+text = "Programmed by Stephen Smith based on the game by Costa Panayi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartLabel" type="Label" parent="Node2D"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 322.6
+margin_top = 244.923
+margin_right = 526.6
+margin_bottom = 261.923
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 8 )
+text = "PRESS FIRE TO START!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+position = Vector2( 528.522, 125.757 )
+texture = ExtResource( 9 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

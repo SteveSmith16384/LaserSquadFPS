@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/purple_planet.obj-a4785f04e6020347239b69a78a849eb8.mesh"
+
+[deps]
+
+files=[ "res://.import/purple_planet.obj-a4785f04e6020347239b69a78a849eb8.mesh" ]
+
+source_file="res://Assets/models/purple_planet.obj"
+dest_files=[ "res://.import/purple_planet.obj-a4785f04e6020347239b69a78a849eb8.mesh", "res://.import/purple_planet.obj-a4785f04e6020347239b69a78a849eb8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

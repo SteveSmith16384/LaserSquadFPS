@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/09-Overdrive-Sex-Machine-v0_5.ogg-5f643ae18b636a2e49b7e50427499026.oggstr"
+
+[deps]
+
+source_file="res://Assets/music/09-Overdrive-Sex-Machine-v0_5.ogg"
+dest_files=[ "res://.import/09-Overdrive-Sex-Machine-v0_5.ogg-5f643ae18b636a2e49b7e50427499026.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

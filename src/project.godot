@@ -1,0 +1,119 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://PlayersBullet.gd"
+}, {
+"base": "KinematicBody",
+"class": "ExtraLife",
+"language": "GDScript",
+"path": "res://ExtraLife.gd"
+}, {
+"base": "Spatial",
+"class": "Main",
+"language": "GDScript",
+"path": "res://Main.gd"
+}, {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/Player.gd"
+}, {
+"base": "Node",
+"class": "SlidingData",
+"language": "GDScript",
+"path": "res://Components/SlidingData.gd"
+} ]
+_global_script_class_icons={
+"Bullet": "",
+"ExtraLife": "",
+"Main": "",
+"Player": "",
+"SlidingData": ""
+}
+
+[application]
+
+config/name="LaserSquadFPS"
+run/main_scene="res://IntroScene.tscn"
+boot_splash/image="res://Assets/splash_screen.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://Globals.gd"
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[input]
+
+move_forward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_backward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+primary_fire={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+secondary_fire={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+toggle_first_person={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+camera_fwd={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"unicode":0,"echo":false,"script":null)
+ ]
+}
+camera_back={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

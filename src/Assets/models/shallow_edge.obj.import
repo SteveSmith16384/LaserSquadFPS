@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/shallow_edge.obj-c25f74f9d5c0408130d8ecb3d3d85dc9.mesh"
+
+[deps]
+
+files=[ "res://.import/shallow_edge.obj-c25f74f9d5c0408130d8ecb3d3d85dc9.mesh" ]
+
+source_file="res://Assets/models/shallow_edge.obj"
+dest_files=[ "res://.import/shallow_edge.obj-c25f74f9d5c0408130d8ecb3d3d85dc9.mesh", "res://.import/shallow_edge.obj-c25f74f9d5c0408130d8ecb3d3d85dc9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

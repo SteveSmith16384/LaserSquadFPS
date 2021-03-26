@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/exolon_logo-0-Exolon_Logo.obj-45c3e704970babf21eec7fe0aad37110.mesh"
+
+[deps]
+
+files=[ "res://.import/exolon_logo-0-Exolon_Logo.obj-45c3e704970babf21eec7fe0aad37110.mesh" ]
+
+source_file="res://Assets/models/exolon_logo-0-Exolon_Logo.obj"
+dest_files=[ "res://.import/exolon_logo-0-Exolon_Logo.obj-45c3e704970babf21eec7fe0aad37110.mesh", "res://.import/exolon_logo-0-Exolon_Logo.obj-45c3e704970babf21eec7fe0aad37110.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
