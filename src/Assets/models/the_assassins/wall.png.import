@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/generator.png-4ce72b275c3b75dc90bde48ff25a12d5.s3tc.stex"
-path.etc2="res://.import/generator.png-4ce72b275c3b75dc90bde48ff25a12d5.etc2.stex"
+path.s3tc="res://.import/wall.png-2622e701c22c2f0d866f212cd6692a8a.s3tc.stex"
+path.etc2="res://.import/wall.png-2622e701c22c2f0d866f212cd6692a8a.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/models/generator.png"
-dest_files=[ "res://.import/generator.png-4ce72b275c3b75dc90bde48ff25a12d5.s3tc.stex", "res://.import/generator.png-4ce72b275c3b75dc90bde48ff25a12d5.etc2.stex" ]
+source_file="res://Assets/models/the_assassins/wall.png"
+dest_files=[ "res://.import/wall.png-2622e701c22c2f0d866f212cd6692a8a.s3tc.stex", "res://.import/wall.png-2622e701c22c2f0d866f212cd6692a8a.etc2.stex" ]
 
 [params]
 

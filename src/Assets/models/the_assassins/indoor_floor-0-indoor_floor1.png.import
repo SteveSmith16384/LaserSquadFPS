@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/chair1.png-2b9bb3f19bf239d3c9139a662050cec5.s3tc.stex"
-path.etc2="res://.import/chair1.png-2b9bb3f19bf239d3c9139a662050cec5.etc2.stex"
+path.s3tc="res://.import/indoor_floor-0-indoor_floor1.png-a49853de886763ee6dc34c47cebf8554.s3tc.stex"
+path.etc2="res://.import/indoor_floor-0-indoor_floor1.png-a49853de886763ee6dc34c47cebf8554.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/models/chair1.png"
-dest_files=[ "res://.import/chair1.png-2b9bb3f19bf239d3c9139a662050cec5.s3tc.stex", "res://.import/chair1.png-2b9bb3f19bf239d3c9139a662050cec5.etc2.stex" ]
+source_file="res://Assets/models/the_assassins/indoor_floor-0-indoor_floor1.png"
+dest_files=[ "res://.import/indoor_floor-0-indoor_floor1.png-a49853de886763ee6dc34c47cebf8554.s3tc.stex", "res://.import/indoor_floor-0-indoor_floor1.png-a49853de886763ee6dc34c47cebf8554.etc2.stex" ]
 
 [params]
 

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/models/the_assassins/gravel-0-gravel.obj" type="ArrayMesh" id=1]
+
+[node name="Gravel" type="MeshInstance"]
+mesh = ExtResource( 1 )
+material/0 = null

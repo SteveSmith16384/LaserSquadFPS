@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/vid_screen-0-vid_screen.obj-a5b1e438450f52b4b1ae2322041a5872.mesh"
+
+[deps]
+
+files=[ "res://.import/vid_screen-0-vid_screen.obj-a5b1e438450f52b4b1ae2322041a5872.mesh" ]
+
+source_file="res://Assets/models/the_assassins/vid_screen-0-vid_screen.obj"
+dest_files=[ "res://.import/vid_screen-0-vid_screen.obj-a5b1e438450f52b4b1ae2322041a5872.mesh", "res://.import/vid_screen-0-vid_screen.obj-a5b1e438450f52b4b1ae2322041a5872.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

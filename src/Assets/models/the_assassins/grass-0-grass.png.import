@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/extra_life.png-5d1e0be4205a495258205b8296c0067f.s3tc.stex"
-path.etc2="res://.import/extra_life.png-5d1e0be4205a495258205b8296c0067f.etc2.stex"
+path.s3tc="res://.import/grass-0-grass.png-29decfecfe6f22994c1089d1c6610104.s3tc.stex"
+path.etc2="res://.import/grass-0-grass.png-29decfecfe6f22994c1089d1c6610104.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/models/extra_life.png"
-dest_files=[ "res://.import/extra_life.png-5d1e0be4205a495258205b8296c0067f.s3tc.stex", "res://.import/extra_life.png-5d1e0be4205a495258205b8296c0067f.etc2.stex" ]
+source_file="res://Assets/models/the_assassins/grass-0-grass.png"
+dest_files=[ "res://.import/grass-0-grass.png-29decfecfe6f22994c1089d1c6610104.s3tc.stex", "res://.import/grass-0-grass.png-29decfecfe6f22994c1089d1c6610104.etc2.stex" ]
 
 [params]
 
