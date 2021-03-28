@@ -16,7 +16,6 @@ var big_expl = preload("res://BigExplosion.tscn")
 
 var level;
 var extra_lives = []
-var entities_to_remove = []
 var time_left : float
 var game_over = false
 var end_sequence_started = false
@@ -44,15 +43,6 @@ func _ready():
 	pass
 	
 
-#func collect_entities_UNUSED(owner):
-#	for child in owner.get_children():
-#		if "ENTITY" in child:
-#			if "REMOVE_IF_OOV" in child:
-#				entities_to_remove.push_back(child)
-#		collect_entities(child)
-#	pass
-#	
-	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://IntroScene.tscn")
@@ -66,32 +56,6 @@ func _process(delta):
 	time_left -= delta
 	if time_left <= 0:
 		game_lost()
-	pass
-
-
-func push(e, normal : Vector3):
-	e.sliding_data = SlidingData.new()
-	e.sliding_data.offset = normal * -150
-	pass
-	
-	
-func slide(e, delta: float):
-	#for e in self.entities_sliding:
-	if e.sliding_data != null:
-		e.sliding_data.offset.y = 0
-		var off = e.sliding_data.offset * delta #e.translation.linear_interpolation(e.sliding_data, e.inter)
-		#print("Moving by " + str(off))
-		var change = e.move_and_slide(off, Vector3.UP)
-		if e.get_slide_count() > 0:
-			var col = e.get_slide_collision(0);
-			#print("Hit " + col.get_collider().to_string())
-			if "sliding_data" in col.get_collider():
-				push(col.get_collider(), col.normal)
-		#else:
-		#	print("change by " + str(change))
-		e.sliding_data.offset = e.sliding_data.offset * 0.9
-		if e.sliding_data.offset.length() < 0.1:
-			e.sliding_data = null
 	pass
 
 
@@ -222,34 +186,6 @@ func game_lost():
 func _on_InvincibleTimer_timeout():
 	invincible = false
 	$InvincibleTimer.stop()
-	pass
-
-
-func add_remove_entities_UNUSED():
-	#print("Num entities before: " + str(level.get_child_count()))
-	for entity in entities_to_remove:
-		if entity == null:
-			#todo - entities_to_remove.remove(entity)
-			continue
-
-		if entity.get_parent_spatial() != null:
-			# Remove entity?
-			var dist = entity.global_transform.origin.distance_to($Player.translation)
-			if dist > Globals.VIEW_RANGE + 11:
-				entity.original_position = entity.global_transform.origin
-				entity.original_parent = entity.get_owner()
-				level.remove_child(entity)
-				#print("Removing entity " + entity.name)
-		else:
-			# Add entity
-			var dist = entity.original_position.distance_to($Player.translation)
-			if dist < Globals.VIEW_RANGE + 10:
-				entity.original_parent.add_child(entity)
-				if entity.has_method("added"):
-					entity.added()
-					#print("Added entity " + entity.name)
-
-	#print("Num entities after: " + str(level.get_child_count()))
 	pass
 
 

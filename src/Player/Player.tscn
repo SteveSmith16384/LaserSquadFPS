@@ -37,7 +37,6 @@ material/0 = null
 
 [node name="gun" parent="MeshSpatial" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00580037, 0.134136, -0.55949 )
-visible = false
 script = ExtResource( 2 )
 default_position = Vector3( 0.288, -0.3, -0.2 )
 

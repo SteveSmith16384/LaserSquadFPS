@@ -1,14 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Highway.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/music/S31-Night Prowler.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/backgrounds/background1.png" type="Texture" id=5]
 [ext_resource path="res://RedPlanet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://PurplePlanet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Main.gd" type="Script" id=8]
-[ext_resource path="res://Assets/music/Dance_Powder_0.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Assets/sfx/bump1.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/sfx/ambience.wav" type="AudioStream" id=11]
 
@@ -45,8 +42,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4652, 0.662287, 6.22679 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
-[node name="Highway" parent="." instance=ExtResource( 2 )]
-
 [node name="RedPlanet" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5026, 12.7261, 5.16714 )
 
@@ -69,10 +64,8 @@ wait_time = 4.0
 [node name="Sounds" type="Spatial" parent="."]
 
 [node name="GameOverMusic" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 4 )
 
 [node name="VictoryMusic" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 9 )
 
 [node name="AudioStreamPlayer_Generic" type="AudioStreamPlayer" parent="Sounds"]
 
@@ -83,17 +76,13 @@ stream = ExtResource( 10 )
 transform = Transform( -0.923451, 0.166174, 0.345867, 0.15378, -0.665539, 0.730349, 0.351553, 0.727629, 0.589039, -1.29142, 6.00791, -6.90629 )
 shadow_enabled = true
 
-[node name="UpdateZoneTimer" type="Timer" parent="."]
-autostart = true
-
 [node name="AudioAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 
-[node name="Timer" type="Timer" parent="."]
+[node name="AmbienceTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
 [connection signal="timeout" from="RestartPosTimer" to="." method="_on_RestartPosTimer_timeout"]
 [connection signal="timeout" from="InvincibleTimer" to="." method="_on_InvincibleTimer_timeout"]
-[connection signal="timeout" from="UpdateZoneTimer" to="." method="_on_UpdateZoneTimer_timeout"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="AmbienceTimer" to="." method="_on_Timer_timeout"]

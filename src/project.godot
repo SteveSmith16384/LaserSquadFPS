@@ -28,24 +28,18 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
-}, {
-"base": "Node",
-"class": "SlidingData",
-"language": "GDScript",
-"path": "res://Components/SlidingData.gd"
 } ]
 _global_script_class_icons={
 "Bullet": "",
 "ExtraLife": "",
 "Main": "",
-"Player": "",
-"SlidingData": ""
+"Player": ""
 }
 
 [application]
 
 config/name="LaserSquadFPS"
-run/main_scene="res://IntroScene.tscn"
+run/main_scene="res://Main.tscn"
 boot_splash/image="res://Assets/splash_screen.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )

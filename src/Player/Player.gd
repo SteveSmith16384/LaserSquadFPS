@@ -41,9 +41,6 @@ func _ready():
 
 	start_y = self.translation.y
 
-#	if Globals.FIRST_PERSON_CAM:
-#		find_node("MeshSpatial").visible = false
-
 	toggle_camera()
 	update_camera()
 	pass
