@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/large_table.obj-50f0dec679fb895d8cc6ab9fe00b01a5.mesh"
+
+[deps]
+
+files=[ "res://.import/large_table.obj-50f0dec679fb895d8cc6ab9fe00b01a5.mesh" ]
+
+source_file="res://Assets/models/the_assassins/large_table.obj"
+dest_files=[ "res://.import/large_table.obj-50f0dec679fb895d8cc6ab9fe00b01a5.mesh", "res://.import/large_table.obj-50f0dec679fb895d8cc6ab9fe00b01a5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
