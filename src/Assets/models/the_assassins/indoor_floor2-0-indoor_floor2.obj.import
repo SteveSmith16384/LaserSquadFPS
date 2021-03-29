@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/indoor_floor2-0-indoor_floor2.obj-f8931db05fe6c37ed9dbf0d37185b2aa.mesh"
+
+[deps]
+
+files=[ "res://.import/indoor_floor2-0-indoor_floor2.obj-f8931db05fe6c37ed9dbf0d37185b2aa.mesh" ]
+
+source_file="res://Assets/models/the_assassins/indoor_floor2-0-indoor_floor2.obj"
+dest_files=[ "res://.import/indoor_floor2-0-indoor_floor2.obj-f8931db05fe6c37ed9dbf0d37185b2aa.mesh", "res://.import/indoor_floor2-0-indoor_floor2.obj-f8931db05fe6c37ed9dbf0d37185b2aa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

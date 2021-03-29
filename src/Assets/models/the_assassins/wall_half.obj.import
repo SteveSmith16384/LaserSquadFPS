@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wall_half.obj-841c6edcfa1a5933ef997aa185f549d7.mesh"
+
+[deps]
+
+files=[ "res://.import/wall_half.obj-841c6edcfa1a5933ef997aa185f549d7.mesh" ]
+
+source_file="res://Assets/models/the_assassins/wall_half.obj"
+dest_files=[ "res://.import/wall_half.obj-841c6edcfa1a5933ef997aa185f549d7.mesh", "res://.import/wall_half.obj-841c6edcfa1a5933ef997aa185f549d7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
