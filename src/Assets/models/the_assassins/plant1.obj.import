@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plant1.obj-6ac8c8cdd20b36051589a95a434c1671.mesh"
+
+[deps]
+
+files=[ "res://.import/plant1.obj-6ac8c8cdd20b36051589a95a434c1671.mesh" ]
+
+source_file="res://Assets/models/the_assassins/plant1.obj"
+dest_files=[ "res://.import/plant1.obj-6ac8c8cdd20b36051589a95a434c1671.mesh", "res://.import/plant1.obj-6ac8c8cdd20b36051589a95a434c1671.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
