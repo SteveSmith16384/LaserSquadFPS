@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sideboard2.obj-58183d31733acc1b621fc63c5b2d09c1.mesh"
+
+[deps]
+
+files=[ "res://.import/sideboard2.obj-58183d31733acc1b621fc63c5b2d09c1.mesh" ]
+
+source_file="res://Assets/models/the_assassins/sideboard2.obj"
+dest_files=[ "res://.import/sideboard2.obj-58183d31733acc1b621fc63c5b2d09c1.mesh", "res://.import/sideboard2.obj-58183d31733acc1b621fc63c5b2d09c1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

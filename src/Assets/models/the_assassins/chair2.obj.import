@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/chair2.obj-4fc9f9463d55447b85ab5cadff637c1a.mesh"
+
+[deps]
+
+files=[ "res://.import/chair2.obj-4fc9f9463d55447b85ab5cadff637c1a.mesh" ]
+
+source_file="res://Assets/models/the_assassins/chair2.obj"
+dest_files=[ "res://.import/chair2.obj-4fc9f9463d55447b85ab5cadff637c1a.mesh", "res://.import/chair2.obj-4fc9f9463d55447b85ab5cadff637c1a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

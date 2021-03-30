@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://VidScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Gravel.tscn" type="PackedScene" id=2]
@@ -16,8 +16,64 @@
 [ext_resource path="res://Sideboard1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Plant1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Door1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Sideboard2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Chair2.tscn" type="PackedScene" id=18]
 
 [node name="SternersHouse" type="Spatial"]
+
+[node name="Sideboard11" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4, 0, -9.11236 )
+
+[node name="Sideboard12" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2, 0, 8.48764 )
+
+[node name="Sideboard13" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 8.48764 )
+
+[node name="Sideboard14" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6, 0, 16.4876 )
+
+[node name="Sideboard15" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8, 0, 0.487642 )
+
+[node name="Sideboard16" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0.487642 )
+
+[node name="Sideboard17" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2, 0, 0.487642 )
+
+[node name="Sideboard18" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.2, 0, 8.48764 )
+
+[node name="Sideboard19" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.2, 0, 3.68764 )
+
+[node name="Sideboard20" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 3.68764 )
+
+[node name="Chair7" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 4.8, 0, -8 )
+
+[node name="Chair8" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 6.4, 0, 1.6 )
+
+[node name="Chair9" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 32, 0, 3.2 )
+
+[node name="Chair10" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 38.4, 0, 4.8 )
+
+[node name="Chair11" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 35.2, 0, -8 )
+
+[node name="Chair12" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 38.4, 0, -8 )
+
+[node name="Chair13" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 44.8, 0, -8 )
+
+[node name="Chair14" parent="." instance=ExtResource( 18 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 46.4, 0, 4.8 )
 
 [node name="Floor" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, -0.2, 0 )
