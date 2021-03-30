@@ -6,7 +6,6 @@ func _ready():
 		$AudioStreamPlayer.play()
 
 	var tween : Tween = $Tween
-	#var tween2 : Tween = get_node("Tween2")
 	if tween:
 		tween.interpolate_property($OmniLight, "light_energy",
 			1.0, 0.0, 
