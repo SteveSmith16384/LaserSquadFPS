@@ -15,7 +15,7 @@ extents = Vector3( 0.657, 0.697, 0.657 )
 script = ExtResource( 1 )
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919402, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59345, 0 )
 
 [node name="FirstPersonCamera" type="Camera" parent="Head"]
 far = 35.0
