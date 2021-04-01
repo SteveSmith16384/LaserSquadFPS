@@ -11,7 +11,7 @@ extents = Vector3( 0.39517, 0.729803, 0.0863387 )
 extents = Vector3( 0.395169, 0.720715, 0.095427 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.771012, 0.943699, 0.131708 )
+extents = Vector3( 0.771012, 0.943699, 0.233496 )
 
 [node name="Door1" type="Spatial"]
 script = ExtResource( 3 )
