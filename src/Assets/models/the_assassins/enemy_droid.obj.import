@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/enemy_droid.obj-8f5b55438a6e31fe1456b19a30bc08ef.mesh"
+
+[deps]
+
+files=[ "res://.import/enemy_droid.obj-8f5b55438a6e31fe1456b19a30bc08ef.mesh" ]
+
+source_file="res://Assets/models/the_assassins/enemy_droid.obj"
+dest_files=[ "res://.import/enemy_droid.obj-8f5b55438a6e31fe1456b19a30bc08ef.mesh", "res://.import/enemy_droid.obj-8f5b55438a6e31fe1456b19a30bc08ef.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
