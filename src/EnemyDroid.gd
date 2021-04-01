@@ -1,5 +1,7 @@
 extends KinematicBody
 
+var bullet_class = preload("res://Bullet.tscn")
+
 var main : Main
 var player : Spatial
 
@@ -45,4 +47,13 @@ func _on_Area_body_entered(body):
 func _on_Area_body_exited(body):
 	if body == player:
 		player_in_area = false
-	pass # Replace with function body.
+	pass
+
+
+func _on_ShootTimer_timeout():
+	if player_in_area && can_see_player:
+		var bullet : Bullet = bullet_class.instance()
+		main.add_child(bullet)
+		bullet.transform = global_transform
+		bullet.translation = get_node("Muzzle").global_transform.origin
+	pass

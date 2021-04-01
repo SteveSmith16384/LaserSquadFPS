@@ -9,4 +9,4 @@ layers = 2
 cast_shadow = 0
 
 [node name="Muzzle" type="Spatial" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110132, -0.972016 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110132, -0.504404 )

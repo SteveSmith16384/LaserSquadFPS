@@ -21,7 +21,7 @@ func _ready():
 
 	current_ammo = clip_size	
 	
-	bullet_class = preload("res://PlayersBullet.tscn")
+	bullet_class = preload("res://Bullet.tscn")
 	pass
 
 	

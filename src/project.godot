@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "Bullet",
 "language": "GDScript",
-"path": "res://PlayersBullet.gd"
+"path": "res://Bullet.gd"
 }, {
 "base": "KinematicBody",
 "class": "ExtraLife",
