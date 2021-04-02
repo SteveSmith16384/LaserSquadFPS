@@ -4,13 +4,10 @@ extends KinematicBody
 const SPEED = 20
 
 var main : Main
-var player : Player
 var dir : Vector3
 
 func _ready():
 	main = get_tree().get_root().get_node("Main")
-	player = main.get_node("Player")
-	#$AudioStreamPlayer.play()
 	pass
 
 

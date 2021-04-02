@@ -248,3 +248,8 @@ func set_first_person(fp : bool):
 	$HUD.show_targetter(fp)
 	pass
 	
+
+func get_patrol_points(droid : Spatial):
+	var dest = $SternersHouse.get_rnd_destination();
+	var patrol_points = $SternersHouse.get_route(droid.translation, dest);
+	return patrol_points

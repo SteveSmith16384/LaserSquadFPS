@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://VidScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Gravel.tscn" type="PackedScene" id=2]
@@ -22,6 +22,28 @@
 [ext_resource path="res://Picture.tscn" type="PackedScene" id=20]
 [ext_resource path="res://EnemyDroid.tscn" type="PackedScene" id=21]
 [ext_resource path="res://SternersHouse.gd" type="Script" id=22]
+
+[sub_resource type="NavigationMesh" id=2]
+vertices = PoolVector3Array( 22.7, 1.4, -1.71607, 18.8, 1.4, -1.71607, 18.5, 1.4, 2.78393, 22.7, 1.4, 3.68393, 15.8, 0.6, 1.58393, 6.8, 0.6, 1.58393, 6.8, 0.6, 6.38393, 15.8, 0.6, 6.38393, 16.1, 0.8, 3.68393, 16.1, 0.8, 2.78393, 16.1, 0.8, 3.68393, 22.7, 1.4, 3.68393, 18.5, 1.4, 2.78393, 16.1, 0.8, 2.78393, 17.75, 0.8, 3.68393, 19.4, 1.4, 3.68393, 17.3, 0.8, 2.78393 )
+polygons = [ PoolIntArray( 1, 0, 2 ), PoolIntArray( 2, 0, 3 ), PoolIntArray( 9, 8, 4 ), PoolIntArray( 4, 8, 7 ), PoolIntArray( 4, 7, 6 ), PoolIntArray( 4, 6, 5 ), PoolIntArray( 13, 16, 10 ), PoolIntArray( 10, 16, 14 ), PoolIntArray( 14, 16, 12 ), PoolIntArray( 14, 12, 15 ), PoolIntArray( 15, 12, 11 ) ]
+cell/size = 1.0
+cell/height = 0.1
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 10, 0.5, 6 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.72549, 0.168627, 0.168627, 1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.968627, 0.952941, 0.0784314, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.490196, 1, 0.0705882, 1 )
 
 [node name="SternersHouse" type="Spatial"]
 script = ExtResource( 22 )
@@ -1554,26 +1576,6 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 24.0105
 ] instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
 
-[node name="EnemyDroid2" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
-
-[node name="EnemyDroid3" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
-
-[node name="EnemyDroid4" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
-
-[node name="EnemyDroid5" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
-
 [node name="SternerStartPositions" type="Spatial" parent="."]
 
 [node name="SternerStartPosition1" type="Spatial" parent="SternerStartPositions"]
@@ -1640,3 +1642,56 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8, 0, 3.2 )
 
 [node name="DroidStartPosition10" type="Spatial" parent="DroidStartPositions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2, 0, 1.6 )
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2, 0, 4.00486 )
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.45922, 0, 0, 0, 1, 0, 0, 0, 3.24466, 20.8012, 0, 0.928593 )
+visible = false
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1.73531, 0, 0, 0, 1, 0, 0, 0, 1.42111, 17.7866, 0.205404, 3.29354 )
+visible = false
+width = 3.16505
+height = 0.5
+depth = 1.16873
+material = SubResource( 5 )
+
+[node name="ImmedDest" type="CSGSphere" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -3 )
+radius = 0.3
+material = SubResource( 8 )
+
+[node name="FinalDest" type="CSGSphere" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80221, 0, -3 )
+radius = 0.4
+material = SubResource( 7 )
+
+[node name="RoutePoints" type="Spatial" parent="."]
+visible = false
+
+[node name="RoutePoint1" type="CSGSphere" parent="RoutePoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.81825, 0, 2.168 )
+radius = 0.3
+material = SubResource( 6 )
+
+[node name="RoutePoint2" type="CSGSphere" parent="RoutePoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0619, 0, 5.47212 )
+radius = 0.3
+material = SubResource( 6 )
+
+[node name="RoutePoint3" type="CSGSphere" parent="RoutePoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.7549, 0, -1.05141 )
+radius = 0.3
+material = SubResource( 6 )
