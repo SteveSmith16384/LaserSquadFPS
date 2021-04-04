@@ -134,22 +134,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ZoneLabel" type="Label" parent="InGame/HBoxContainer"]
-margin_left = 22.0
-margin_top = 1.0
-margin_right = 90.0
-margin_bottom = 38.0
-theme = ExtResource( 2 )
-text = "ZONE: 0
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="TimeLabel" type="Label" parent="InGame/HBoxContainer"]
-margin_left = 170.0
+margin_left = 96.0
 margin_top = 11.0
-margin_right = 232.0
+margin_right = 158.0
 margin_bottom = 28.0
 theme = ExtResource( 2 )
 text = "TIME: 0"
@@ -158,9 +146,9 @@ __meta__ = {
 }
 
 [node name="ScoreLabel" type="Label" parent="InGame/HBoxContainer"]
-margin_left = 312.0
+margin_left = 238.0
 margin_top = 1.0
-margin_right = 384.0
+margin_right = 310.0
 margin_bottom = 38.0
 theme = ExtResource( 2 )
 text = "AMMO: 0
@@ -170,9 +158,9 @@ __meta__ = {
 }
 
 [node name="LivesLabel" type="Label" parent="InGame/HBoxContainer"]
-margin_left = 464.0
+margin_left = 390.0
 margin_top = 1.0
-margin_right = 536.0
+margin_right = 462.0
 margin_bottom = 38.0
 theme = ExtResource( 2 )
 text = "AMMO: 0

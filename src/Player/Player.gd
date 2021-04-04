@@ -3,8 +3,8 @@ extends KinematicBody
 
 const IS_PLAYER = true
 
-const speed = 7
-const acceleration = 5
+const speed = 3.5#4
+const acceleration = 25
 const mouse_sensitivity = 0.3
 
 var main : Main
@@ -70,8 +70,10 @@ func update_camera():
 	if first_person_mode:
 		var rot = head.rotation_degrees.y
 		$MeshSpatial.rotation_degrees.y = rot
+		$Human.rotation_degrees.y = rot + 180
 	else:
 		$MeshSpatial.rotation_degrees.y = third_person_camera.rotation_degrees.y
+		$Human.rotation_degrees.y = third_person_camera.rotation_degrees.y + 180
 	pass
 
 
@@ -105,7 +107,7 @@ func _physics_process(delta):
 		return
 		
 	play_footstep = false
-	var on_floor = is_on_floor()
+	#var on_floor = is_on_floor()
 	
 	var head_basis
 	if first_person_mode:
@@ -141,8 +143,11 @@ func _physics_process(delta):
 			main.push(coll, get_slide_collision(0).normal)
 		pass
 	
-	if play_footstep && on_floor:
+	if play_footstep:
 		play_footstep()
+		$Human.anim("Walk")
+	else:
+		$Human.anim("Idle")
 	
 	pass
 	
@@ -158,7 +163,7 @@ func set_first_person_mode(b):
 		return
 		
 	first_person_mode = b
-	find_node("MeshSpatial").visible = !first_person_mode
+	#find_node("MeshSpatial").visible = !first_person_mode
 	main.set_first_person(first_person_mode)
 
 	self.first_person_camera.current = first_person_mode

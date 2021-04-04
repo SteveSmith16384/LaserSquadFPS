@@ -8,7 +8,7 @@ var player : Spatial
 var player_in_area = false
 var can_see_player = false
 
-const move_speed = 1#00
+const move_speed = 2
 var patrol_path : Path
 var patrol_points
 var patrol_index = 0
@@ -18,10 +18,6 @@ var closest
 func _ready():
 	main = get_tree().get_root().get_node("Main")
 	player = main.get_node("Player")
-	
-	#patrol_path = main.get_node("SternersHouse/Path")
-	#patrol_points = patrol_path.get_curve().get_baked_points()
-	#closest = patrol_path.get_curve().get_closest_point(self.translation)
 	pass
 
 
@@ -45,31 +41,38 @@ func _physics_process(delta):
 		var space_state = get_world().direct_space_state
 		var result : Dictionary = space_state.intersect_ray(self.translation, player.translation, [player]);
 		can_see_player = result.empty()
-	else:
-#		if !patrol_path:
-#			return
+		
+	if can_see_player == false:
 		if patrol_points == null:
 			patrol_points = main.get_patrol_points(self);
+			patrol_index = 0
+			# SHow debugging nodes
 			main.get_node("SternersHouse/FinalDest").translation = patrol_points[patrol_points.size()-1]
 			main.get_node("SternersHouse/FinalDest").translation.y = 0.5
-			patrol_index = 0
-			print("Got patrol points")
+			#print("Got patrol points")
 			
 		var target = patrol_points[patrol_index]
 		target.y = 0
 		main.get_node("SternersHouse/ImmedDest").translation = target
+
+		# Look at -todo - improve
+		var l = target
+		l.y = self.translation.y
+		self.look_at(l, Vector3.UP)
+
 		if translation.distance_to(target) < 1:
-			patrol_index = patrol_index + 1# = wrapi(patrol_index + 1, 0, patrol_points.size())
+			patrol_index = patrol_index + 1
 			if patrol_index >= patrol_points.size():
 				patrol_points = null
-				print("End of route")
+				#print("End of route")
 				return
-#			target = patrol_points[patrol_index]
-#			target.y = 0
-			print("Next target: " + str(target))
-
+			
 		velocity = (target - translation).normalized() * move_speed
-		velocity = move_and_slide(velocity)
+		if velocity.length() > 0:
+			var dist = move_and_slide(velocity) # todo - check for collision with robots
+			if dist.length() <= 0:
+				print("Cannot move!")
+				patrol_points = null
 	pass
 	
 	

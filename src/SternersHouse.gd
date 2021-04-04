@@ -29,6 +29,8 @@ func get_rnd_destination():
 
 func get_route(start, end):
 	var route = $Navigation.get_simple_path(start, end)
+	if route.size() == 0:
+		print("No route!")
 	route.append(end)
 	return route
 

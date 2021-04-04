@@ -1534,7 +1534,7 @@ bones/10/name = "LeftHand"
 bones/10/parent = 9
 bones/10/rest = Transform( 0.991161, -0.0291528, -0.129426, 0.0328158, 0.999116, 0.02626, 0.128546, -0.030275, 0.991241, -1.11759e-08, 3.28757e-07, -1.29778 )
 bones/10/enabled = true
-bones/10/bound_children = [ NodePath("BoneAttachment") ]
+bones/10/bound_children = [  ]
 bones/11/name = "LeftHandThumb1"
 bones/11/parent = 10
 bones/11/rest = Transform( 0.638887, 0.210253, 0.740011, -0.312569, 0.949895, -2.97034e-05, -0.702939, -0.231286, 0.672595, -0.161039, -7.33184e-07, -0.146367 )
@@ -1700,7 +1700,7 @@ mesh = SubResource( 8 )
 material/0 = null
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Human Armature"]
-transform = Transform( 0.381612, -0.923777, 0.0317533, -0.771773, -0.337348, -0.539038, 0.508662, 0.181197, -0.841681, 1.56965, 0.865838, -3.74586 )
+transform = Transform( -0.986835, 0.0862008, 0.136853, 0.143123, 0.0713141, 0.987132, 0.0753321, 0.993722, -0.0827124, -0.176961, -3.4194, -5.7751 )
 bone_name = "LeftHand"
 
 [node name="CSGCylinder" type="CSGCylinder" parent="Human Armature/BoneAttachment"]
