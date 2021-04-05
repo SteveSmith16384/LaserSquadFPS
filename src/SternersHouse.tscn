@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://VidScreen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Gravel.tscn" type="PackedScene" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://Picture.tscn" type="PackedScene" id=20]
 [ext_resource path="res://EnemyDroid.tscn" type="PackedScene" id=21]
 [ext_resource path="res://SternersHouse.gd" type="Script" id=22]
+[ext_resource path="res://Toilet.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Shower.tscn" type="PackedScene" id=24]
 
 [sub_resource type="NavigationMesh" id=1]
 vertices = PoolVector3Array( 8.64148, 1.2, 7.30442, 9.34148, 1.2, 7.30442, 9.34148, 1.2, 6.60442, 13.5415, 1.2, 6.60442, 13.5415, 1.2, 7.30442, 14.2415, 1.2, 7.30442, 15.6415, 0.6, 4.50442, 16.3415, 0.6, 4.50442, 16.3415, 0.6, 3.80442, 19.8415, 1.2, 3.80442, 19.8415, 1.2, 4.50442, 20.5415, 1.2, 4.50442, 21.2415, 1.2, -0.39558, 21.9415, 1.2, -0.39558, 21.9415, 1.2, -1.09558, 20.5415, 1.2, -1.79558, 26.1415, 1.2, -1.09558, 26.1415, 1.2, -0.39558, 26.8415, 1.2, -0.39558, 28.2415, 1.2, -1.09558, 28.2415, 1.2, 1.00442, 28.2415, 1.2, 0.30442, 27.5415, 1.2, 0.30442, 21.9415, 1.2, -1.79558, 21.9415, 1.2, -2.49558, 21.2415, 1.2, -2.49558, 15.6415, 1.2, -3.89558, 15.6415, 1.2, -4.59558, 14.9415, 1.2, -4.59558, 19.8415, 1.2, -2.49558, 19.8415, 1.2, -1.79558, 20.5415, 1.2, -1.79558, 20.5415, 1.2, 2.40442, 19.8415, 1.2, 2.40442, 19.8415, 1.2, 3.10442, 13.5415, 1.2, 6.60442, 14.2415, 1.2, 7.30442, 14.9415, 1.2, 7.30442, 7.24148, 1.2, 7.30442, 8.64148, 1.2, 7.30442, 9.34148, 1.2, 6.60442, 13.5415, 1.2, 6.60442, 14.9415, 1.2, 7.30442, 15.6415, 1.2, 7.30442, 15.6415, 0.6, 4.50442, 20.5415, 1.2, 4.50442, 20.5415, 1.2, 6.60442, 21.2415, 1.2, 6.60442, 26.8415, 1.2, 0.30442, 26.1415, 1.2, 0.30442, 26.1415, 1.2, 2.40442, 28.2415, 1.2, 1.00442, 6.54148, 1.2, 7.30442, 7.24148, 1.2, 7.30442, 9.34148, 1.2, 6.60442, 27.5415, 1.2, 0.30442, 28.2415, 1.2, -1.09558, 26.8415, 1.2, -0.39558, 26.8415, 1.2, 0.30442, 20.5415, 1.2, 4.50442, 21.2415, 1.2, 6.60442, 21.2415, 1.2, -0.39558, 20.5415, 1.2, 2.40442, 6.54148, 0.4, 1.70442, 6.54148, 1.2, 7.30442, 9.34148, 1.2, 6.60442, 15.6415, 0.6, 4.50442, 16.3415, 0.6, 3.80442, 15.6415, 0.4, 1.70442, 6.54148, 0.4, 4.50442, 21.2415, 1.2, -2.49558, 21.2415, 1.2, -3.89558, 15.6415, 1.2, -3.89558, 19.8415, 1.2, -2.49558, 28.2415, 1.2, -1.09558, 35.2415, 1.2, -1.09558, 34.5415, 1.2, -1.79558, 21.9415, 1.2, -1.79558, 14.9415, 1.2, -4.59558, 5.84148, 1.1, -1.09558, 14.9415, 1.1, -1.09558, 15.6415, 1.2, -2.49558, 15.6415, 1.2, -3.89558, 9.34148, 1.2, 6.60442, 13.5415, 1.2, 6.60442, 15.6415, 0.6, 4.50442, 11.4415, 0.4, 6.60442, 14.9415, 1.2, -4.59558, 14.9415, 1.1, -8.09558, 5.84148, 1.1, -8.09558, 5.84148, 1.1, -1.09558, 28.2415, 1.2, 1.00442, 27.5415, 1.2, 0.30442, 26.8415, 1.2, 0.30442, 15.6415, 1.2, -3.89558, 15.6415, 1.2, -2.49558, 19.8415, 1.2, -2.49558, 16.3415, 0.6, 3.10442, 15.6415, 0.4, 1.70442, 16.3415, 0.6, 3.80442, 19.8415, 1.2, 3.10442, 16.3415, 0.6, 3.10442, 16.3415, 0.6, 3.80442, 19.8415, 1.2, 3.80442, 21.9415, 1.2, -1.79558, 21.9415, 1.2, -1.09558, 26.1415, 1.2, -1.09558, 20.5415, 1.2, 2.40442, 19.8415, 1.2, 3.10442, 19.8415, 1.2, 3.80442, 20.5415, 1.2, 4.50442, 21.9415, 1.2, -1.09558, 21.9415, 1.2, -1.79558, 21.2415, 1.2, -2.49558, 19.8415, 1.2, -2.49558, 20.5415, 1.2, -1.79558, 28.2415, 1.2, -1.09558, 21.9415, 1.2, -1.79558, 26.1415, 1.2, -1.09558, 20.5415, 1.2, -1.79558, 20.5415, 1.2, 2.40442, 21.2415, 1.2, -0.39558, 39.4415, 1.2, 2.40442, 39.4415, 1.2, 1.00442, 28.2415, 1.2, 1.00442, 26.1415, 1.2, 2.40442, 40.8415, 1.2, -5.99558, 41.5415, 1.2, -5.99558, 41.5415, 1.2, -6.69558, 35.2415, 1.2, -8.09558, 43.6415, 1.2, -6.69558, 43.6415, 1.2, -5.99558, 44.3415, 1.2, -5.99558, 45.0415, 1.2, -8.09558, 44.3415, 1.2, 8.70442, 43.6415, 1.2, 8.70442, 43.6415, 1.2, 9.40442, 45.0415, 1.2, 10.1044, 21.9415, 1.2, 17.8044, 21.2415, 1.2, 17.8044, 21.2415, 1.2, 18.5044, 23.3415, 1.2, 19.9044, 15.6415, 1.2, 18.5044, 15.6415, 1.2, 17.8044, 14.9415, 1.2, 17.8044, 14.2415, 1.2, 17.8044, 13.5415, 1.2, 17.8044, 13.5415, 1.2, 18.5044, 9.34148, 1.2, 18.5044, 9.34148, 1.2, 17.8044, 8.64148, 1.2, 17.8044, 7.24148, 1.2, 22.7044, 8.64148, 1.2, 20.6044, 8.64148, 1.2, 20.6044, 9.34148, 1.2, 20.6044, 9.34148, 1.2, 19.9044, 23.3415, 1.2, 10.8044, 24.0415, 1.2, 10.8044, 24.0415, 1.2, 10.1044, 21.9415, 1.2, 9.40442, 35.2415, 1.2, -2.49558, 34.5415, 1.2, -2.49558, 34.5415, 1.2, -1.79558, 35.2415, 1.2, -1.09558, 39.4415, 1.2, -1.09558, 39.4415, 1.2, -1.79558, 15.6415, 1.2, 18.5044, 9.34148, 1.2, 19.9044, 23.3415, 1.2, 19.9044, 21.2415, 1.2, 18.5044, 7.24148, 1.2, 22.7044, 8.64148, 1.2, 22.7044, 8.64148, 1.2, 20.6044, 15.6415, 1.2, 18.5044, 13.5415, 1.2, 18.5044, 9.34148, 1.2, 19.9044, 21.9415, 1.2, 17.8044, 23.3415, 1.2, 19.9044, 23.3415, 1.2, 10.8044, 21.9415, 1.2, 9.40442, 39.4415, 1.2, -1.79558, 40.8415, 1.2, -1.79558, 40.8415, 1.2, -5.99558, 35.2415, 1.2, -8.09558, 35.2415, 1.2, -2.49558, 32.4415, 1.2, 9.40442, 21.9415, 1.2, 9.40442, 24.0415, 1.2, 10.1044, 34.5415, 1.2, 10.1044, 8.64148, 1.2, 17.8044, 8.64148, 1.2, 7.30442, 7.24148, 1.2, 7.30442, 7.24148, 1.2, 22.7044, 13.5415, 1.2, 18.5044, 9.34148, 1.2, 18.5044, 9.34148, 1.2, 19.9044, 45.0415, 1.2, -8.09558, 35.2415, 1.2, -8.09558, 41.5415, 1.2, -6.69558, 43.6415, 1.2, -6.69558, 44.3415, 1.2, -5.99558, 44.3415, 1.2, 8.70442, 45.0415, 1.2, 10.1044, 45.0415, 1.2, -8.09558, 9.34148, 1.2, 18.5044, 8.64148, 1.2, 20.6044, 9.34148, 1.2, 19.9044, 14.9415, 1.2, 17.8044, 14.9415, 1.2, 7.30442, 14.2415, 1.2, 7.30442, 14.2415, 1.2, 17.8044, 43.6415, 1.2, 9.40442, 32.4415, 1.2, 9.40442, 34.5415, 1.2, 10.1044, 45.0415, 1.2, 10.1044, 15.6415, 1.2, 18.5044, 14.9415, 1.2, 17.8044, 14.2415, 1.2, 17.8044, 13.5415, 1.2, 18.5044 )
@@ -851,8 +853,74 @@ transform = Transform( 0.998522, 2.37605e-09, 0.0543577, -2.37605e-09, 1, -6.462
 [node name="Wall_Window" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, -1.6 )
 
-[node name="Wall25" parent="." instance=ExtResource( 3 )]
+[node name="Wall_Window15" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, -1.6 )
+
+[node name="Wall_Window16" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, -11.2 )
+
+[node name="Wall_Window17" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -11.2 )
+
+[node name="Wall_Window18" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 0, -11.2 )
+
+[node name="Wall_Window19" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2, 0, -3.2 )
+
+[node name="Wall_Window20" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4, 0, -3.2 )
+
+[node name="Wall_Window21" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8, 0, -9.6 )
+
+[node name="Wall_Window22" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -9.6 )
+
+[node name="Wall_Window23" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.2, 0, -9.6 )
+
+[node name="Wall_Window24" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6, 0, -4.8 )
+
+[node name="Wall_Window2" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 19.2 )
+
+[node name="Wall_Window3" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 24 )
+
+[node name="Wall_Window4" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 24 )
+
+[node name="Wall_Window5" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4, 0, 20.8 )
+
+[node name="Wall_Window6" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 20.8 )
+
+[node name="Wall_Window7" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8, 0, 22.4 )
+
+[node name="Wall_Window8" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6, 0, 22.4 )
+
+[node name="Wall_Window9" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2, 0, 11.2 )
+
+[node name="Wall_Window10" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4, 0, 11.2 )
+
+[node name="Wall_Window11" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6, 0, 11.2 )
+
+[node name="Wall_Window12" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 12.8 )
+
+[node name="Wall_Window13" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.8, 0, 12.8 )
+
+[node name="Wall_Window14" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6, 0, 3.2 )
 
 [node name="Wall61" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, -9.6 )
@@ -863,15 +931,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, -9.6 )
 [node name="Wall63" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, -9.6 )
 
-[node name="Wall97" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 0, -11.2 )
-
-[node name="Wall98" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -11.2 )
-
-[node name="Wall99" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, -11.2 )
-
 [node name="Wall100" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4, 0, -9.6 )
 
@@ -881,38 +940,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4, 0, -4.8 )
 [node name="Wall107" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8, 0, -3.2 )
 
-[node name="Wall137" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4, 0, -3.2 )
-
 [node name="Wall138" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -3.2 )
 
 [node name="Wall108" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6, 0, -3.2 )
 
-[node name="Wall109" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2, 0, -3.2 )
-
 [node name="Wall7" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 8 )
-
-[node name="Wall14" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 12.8 )
 
 [node name="Wall27" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 12.8 )
 
-[node name="Wall40" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 19.2 )
-
-[node name="Wall42" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 24 )
-
 [node name="Wall43" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 24 )
-
-[node name="Wall44" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 24 )
 
 [node name="Wall2" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 9.6, 0, 9.6 )
@@ -1136,9 +1177,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4, 0, -4.8 )
 [node name="Wall165" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -4.8 )
 
-[node name="Wall172" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6, 0, -4.8 )
-
 [node name="Wall117" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0 )
 
@@ -1151,20 +1189,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2, 0, 0 )
 [node name="Wall139" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2, 0, -9.6 )
 
-[node name="Wall140" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8, 0, -9.6 )
-
 [node name="Wall141" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -9.6 )
 
-[node name="Wall142" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -9.6 )
-
 [node name="Wall143" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6, 0, -9.6 )
-
-[node name="Wall144" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.2, 0, -9.6 )
 
 [node name="Wall171" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.8, 0, -9.6 )
@@ -1199,12 +1228,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4, 0, 8 )
 [node name="Wall152" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4, 0, 12.8 )
 
-[node name="Wall151" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.8, 0, 12.8 )
-
-[node name="Wall132" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 12.8 )
-
 [node name="Wall129" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 3.2 )
 
@@ -1219,9 +1242,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4, 0, 3.2 )
 
 [node name="Wall158" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 3.2 )
-
-[node name="Wall160" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.6, 0, 3.2 )
 
 [node name="Wall23" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4, 0, 0 )
@@ -1262,12 +1282,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2, 0, 20.8 )
 [node name="Wall47" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 20.8 )
 
-[node name="Wall48" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4, 0, 20.8 )
-
-[node name="Wall49" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 20.8 )
-
 [node name="Wall50" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6, 0, 20.8 )
 
@@ -1277,17 +1291,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 17.6 )
 [node name="Wall55" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2, 0, 17.6 )
 
-[node name="Wall52" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8, 0, 22.4 )
-
 [node name="Wall75" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4, 0, 22.4 )
 
 [node name="Wall76" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 22.4 )
-
-[node name="Wall77" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6, 0, 22.4 )
 
 [node name="Wall53" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 17.6 )
@@ -1340,20 +1348,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6, 0, 8 )
 [node name="Wall82" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6, 0, 11.2 )
 
-[node name="Wall83" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2, 0, 11.2 )
-
 [node name="Wall84" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8, 0, 11.2 )
 
-[node name="Wall85" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4, 0, 11.2 )
-
 [node name="Wall86" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 11.2 )
-
-[node name="Wall87" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6, 0, 11.2 )
 
 [node name="Wall88" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2, 0, 11.2 )
@@ -1601,7 +1600,23 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 30.4104
 [node name="WallHalf21" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 24.0105, 0, 7.52856 )
 
+[node name="Toilet" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0, 5.40703 )
+
+[node name="Shower" parent="." instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4429, 0, 5.1502 )
+
 [node name="EnemyDroid1" parent="." groups=[
+"droid",
+] instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
+
+[node name="EnemyDroid2" parent="." groups=[
+"droid",
+] instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
+
+[node name="EnemyDroid3" parent="." groups=[
 "droid",
 ] instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )

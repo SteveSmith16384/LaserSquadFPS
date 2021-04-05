@@ -15,7 +15,7 @@ points = PoolVector3Array( 0, 1, 0, -10, 0, -10, -10, 2, -10, 10, 0, -10, 10, 2,
 script = ExtResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44667, 0.125391, -1.36257 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44667, 0.0617874, -1.36257 )
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 3 )
 

@@ -43,7 +43,6 @@ func _physics_process(delta):
 		return
 		
 	if player_in_area:
-		#todo only every so often
 		var space_state = get_world().direct_space_state
 		var result : Dictionary = space_state.intersect_ray(self.translation, player.translation, [player]);
 		can_see_player = result.empty()
@@ -59,12 +58,8 @@ func _physics_process(delta):
 			
 		var target = patrol_points[patrol_index]
 		target.y = 0
+		# Debugging node
 		main.get_node("SternersHouse/ImmedDest").translation = target
-
-		# Look at -todo - improve
-		var l = target
-		l.y = self.translation.y
-		self.look_at(l, Vector3.UP)
 
 		if translation.distance_to(target) < 1:
 			patrol_index = patrol_index + 1
@@ -73,6 +68,13 @@ func _physics_process(delta):
 				#print("End of route")
 				return
 			
+		# Look at
+		var us = self.translation
+		var them = target#.translation
+		var wtransform = global_transform.looking_at(Vector3(them.x,us.y,them.z),Vector3(0,1,0))
+		var wrotation = Quat(global_transform.basis).slerp(Quat(wtransform.basis), delta*5)
+		self.global_transform = Transform(Basis(wrotation), global_transform.origin)
+
 		velocity = (target - translation).normalized() * move_speed
 		if velocity.length() > 0:
 			var dist = move_and_slide(velocity) # todo - check for collision with robots

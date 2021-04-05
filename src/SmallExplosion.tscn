@@ -37,7 +37,4 @@ autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-
-[node name="OmniLight" type="OmniLight" parent="."]
-shadow_enabled = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
