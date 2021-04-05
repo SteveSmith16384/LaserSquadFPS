@@ -80,6 +80,7 @@ func update_camera():
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("toggle_first_person"):
+		#set_first_person_mode(not first_person_mode)
 		if self.first_person_mode:
 			self.target_dist = 6
 		else:
@@ -162,6 +163,7 @@ func set_first_person_mode(b):
 		return
 		
 	first_person_mode = b
+
 	#find_node("MeshSpatial").visible = !first_person_mode
 	$Human.visible = !first_person_mode
 	main.set_first_person(first_person_mode)

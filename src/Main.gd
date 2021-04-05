@@ -45,10 +45,10 @@ func _process(delta):
 		get_tree().change_scene("res://IntroScene.tscn")
 		return
 		
-	if game_over:
-		if Input.is_action_just_pressed("primary_fire"):
-			get_tree().change_scene("res://IntroScene.tscn")
-		return
+#	if game_over:
+#		if Input.is_action_just_pressed("primary_fire"):
+#			get_tree().change_scene("res://IntroScene.tscn")
+#		return
 		
 	time_left -= delta
 	if time_left <= 0:
@@ -77,6 +77,7 @@ func player_killed():
 	if invincible:
 		return
 		
+	$Player.set_first_person_mode(false)
 	$Player/Human.anim("Die")
 
 	$Player.alive = false

@@ -32,9 +32,6 @@ func _process(delta):
 		var wrotation = Quat(global_transform.basis).slerp(Quat(wtransform.basis), delta*5)
 		self.global_transform = Transform(Basis(wrotation), global_transform.origin)
 		pass
-	else:
-		#self.rotation_degrees.y += 10 * delta
-		pass
 	pass
 
 

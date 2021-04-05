@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/models/the_assassins/plants1.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Resources/Magenta_Material.tres" type="Material" id=2]
+
+[node name="Plants1_Magenta" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.942022, 0, -1.32892 )
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
