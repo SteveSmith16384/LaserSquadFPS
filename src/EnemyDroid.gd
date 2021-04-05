@@ -95,3 +95,7 @@ func _on_ShootTimer_timeout():
 		bullet.transform = global_transform
 		bullet.translation = get_node("Muzzle").global_transform.origin
 	pass
+
+
+func hit_by_bullet():
+	queue_free()

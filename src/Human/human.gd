@@ -8,6 +8,7 @@ func _ready():
 	#anim("Punch")
 	anim("Walk")
 	pass
+	
 
 func anim(a):
 	var anim = $"Human Armature/AnimationPlayer"

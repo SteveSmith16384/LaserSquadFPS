@@ -139,8 +139,6 @@ func _physics_process(delta):
 	if get_slide_count() > 0:
 		var coll = get_slide_collision(0).get_collider()
 		main.collision(self, coll)
-		if "sliding_data" in coll:
-			main.push(coll, get_slide_collision(0).normal)
 		pass
 	
 	if play_footstep:
