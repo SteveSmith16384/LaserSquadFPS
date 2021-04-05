@@ -14,7 +14,7 @@ extents = Vector3( 0.240981, 0.516484, 0.143523 )
 [node name="Wall_Window" type="StaticBody"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19861, 0, -1.84464 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19861, 0, -1.75984 )
 mesh = ExtResource( 1 )
 material/0 = null
 

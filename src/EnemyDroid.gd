@@ -42,11 +42,11 @@ func _physics_process(delta):
 	if player.alive == false:
 		return
 		
-	if player_in_area:
-		var space_state = get_world().direct_space_state
-		var result : Dictionary = space_state.intersect_ray(self.translation, player.translation, [player]);
-		can_see_player = result.empty()
-		
+	var space_state = get_world().direct_space_state
+	var result : Dictionary = space_state.intersect_ray(self.translation, player.translation, [player]);
+	can_see_player = result.empty()
+	$MeshInstance.visible = can_see_player
+
 	if player_in_area == false or can_see_player == false:
 		if patrol_points == null:
 			patrol_points = main.get_patrol_points(self);
