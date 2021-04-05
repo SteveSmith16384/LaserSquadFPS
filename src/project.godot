@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Bullet.gd"
 }, {
-"base": "KinematicBody",
-"class": "ExtraLife",
-"language": "GDScript",
-"path": "res://ExtraLife.gd"
-}, {
 "base": "Spatial",
 "class": "Main",
 "language": "GDScript",
@@ -31,7 +26,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bullet": "",
-"ExtraLife": "",
 "Main": "",
 "Player": ""
 }

@@ -1,9 +1,8 @@
 class_name Player
 extends KinematicBody
 
-const IS_PLAYER = true
 
-const speed = 3.5#4
+const speed = 3#3.5#4
 const acceleration = 25
 const mouse_sensitivity = 0.3
 
@@ -55,7 +54,7 @@ func _input(event):
 			first_person_camera.rotate_x(deg2rad(-x_delta))
 			camera_x_rotation += x_delta
 #
-		#else: # 3rd-person cam
+		# 3rd-person cam
 		var mouseVec : Vector2 = event.get_relative()
 		yaw_y = head.rotation_degrees.y#fmod(yaw_y - mouseVec.x * mouseSensitivity, 360.0)
 		pitch_x = max(min(pitch_x - mouseVec.y * mouseSensitivity, 90.0), -90.0)
@@ -67,13 +66,15 @@ func _input(event):
 func update_camera():
 	third_person_camera.set_rotation(Vector3(deg2rad(pitch_x), deg2rad(yaw_y), 0.0))
 	third_person_camera.set_translation(origin - actual_dist * third_person_camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5))
-	if first_person_mode:
-		var rot = head.rotation_degrees.y
-		$MeshSpatial.rotation_degrees.y = rot
-		$Human.rotation_degrees.y = rot + 180
-	else:
-		$MeshSpatial.rotation_degrees.y = third_person_camera.rotation_degrees.y
-		$Human.rotation_degrees.y = third_person_camera.rotation_degrees.y + 180
+	
+	if alive:
+		if first_person_mode:
+			var rot = head.rotation_degrees.y
+			#$MeshSpatial.rotation_degrees.y = rot
+			$Human.rotation_degrees.y = rot + 180
+		else:
+			#$MeshSpatial.rotation_degrees.y = third_person_camera.rotation_degrees.y
+			$Human.rotation_degrees.y = third_person_camera.rotation_degrees.y + 180
 	pass
 
 
@@ -162,6 +163,7 @@ func set_first_person_mode(b):
 		
 	first_person_mode = b
 	#find_node("MeshSpatial").visible = !first_person_mode
+	$Human.visible = !first_person_mode
 	main.set_first_person(first_person_mode)
 
 	self.first_person_camera.current = first_person_mode
@@ -191,4 +193,8 @@ func restart(trans):
 	alive = true
 	pass
 	
+	
+func hit_by_bullet():
+	main.player_hit()
+	pass
 	

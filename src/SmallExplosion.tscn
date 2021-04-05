@@ -17,8 +17,10 @@ script = ExtResource( 1 )
 [node name="CPUParticles" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
 cast_shadow = 0
+emitting = false
 amount = 48
 lifetime = 2.0
+one_shot = true
 explosiveness = 1.0
 mesh = SubResource( 2 )
 direction = Vector3( 0, 0, 1 )

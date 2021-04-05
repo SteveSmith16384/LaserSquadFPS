@@ -9,7 +9,7 @@ radius = 0.504654
 height = 1.4635
 
 [sub_resource type="ConvexPolygonShape" id=2]
-points = PoolVector3Array( 0, 1, 0, -5, 0, -10, -5, 2, -10, 5, 0, -10, 5, 2, -10 )
+points = PoolVector3Array( 0, 1, 0, -10, 0, -10, -10, 2, -10, 10, 0, -10, 10, 2, -10 )
 
 [node name="EnemyDroid" type="KinematicBody"]
 script = ExtResource( 2 )

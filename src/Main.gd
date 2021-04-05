@@ -8,14 +8,13 @@ var prev_start_pos1 : Vector3
 var start_pos_idx : int = 0
 
 var score : int = 0
+var lives : int = 0
 var invincible = false
 
 var tiny_expl = preload("res://TinyExplosion.tscn")	
 var small_expl = preload("res://SmallExplosion.tscn")	
 var big_expl = preload("res://BigExplosion.tscn")	
 
-var level;
-var extra_lives = []
 var time_left : float
 var game_over = false
 var end_sequence_started = false
@@ -23,8 +22,6 @@ var end_sequence_started = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-	level = $Highway
 
 	if Globals.DEBUG_START_POS:
 		$Player.translation = $StartPosition.translation
@@ -35,7 +32,7 @@ func _ready():
 
 	time_left = Globals.START_TIME_SECONDS
 	$HUD.update_time_label(time_left)
-	$HUD.update_lives_label(extra_lives.size()+1)
+	$HUD.update_lives_label(1) # todo
 	$HUD.update_score_label(0)
 	
 	self.set_first_person($Player.first_person_mode)
@@ -62,25 +59,16 @@ func _process(delta):
 func collision(mover, hit):
 	if hit.has_method("collided"):
 		hit.collided(mover)
-
-	if "IS_PLAYER" in hit:
-		if "KILLS_PLAYER" in mover:
-			player_killed(hit)
-			mover.queue_free()
-			pass
-		pass
 	pass
 
 
-func player_killed(player):
+func player_hit():
+	player_killed()
+	pass
+	
+	
+func player_killed():
 	if Globals.PLAYER_INVINCIBLE:
-		return
-		
-	if player != $Player:
-		extra_lives.remove(extra_lives.find(player))
-		self.big_explosion(player)
-		player.queue_free()
-		$HUD.update_lives_label(extra_lives.size()+1)
 		return
 		
 	if $Player.alive == false:
@@ -89,25 +77,21 @@ func player_killed(player):
 	if invincible:
 		return
 		
+	$Player/Human.anim("Die")
+
 	$Player.alive = false
-	self.small_explosion(player)
+	self.small_explosion($Player)
 	#$Music.stop()
 	$Player.get_node("Audio_Hit").play()
-	if extra_lives.size() > 0:
+	if lives > 0:
 		$RestartTimer.start()
 	else:
 		game_lost()
-		pass
 	pass
 	
 	
 func restart_player():
-	var idx = Globals.rnd.randi_range(0, extra_lives.size()-1)
-	var extra_life : ExtraLife = extra_lives[idx]
-	extra_lives.remove(idx)
-	$Player.restart(extra_life.translation)
-	extra_life.queue_free()
-	$HUD.update_lives_label(extra_lives.size()+1)
+	#todo $HUD.update_lives_label(extra_lives.size()+1)
 	#$Music.play()
 	
 	invincible = true
@@ -157,25 +141,6 @@ func play_clang():
 	pass
 	
 
-func _on_RestartPosTimer_timeout():
-	if $Player.alive == false:
-		return
-		
-	if start_pos_idx == 0:
-		self.prev_start_pos0 = $Player.translation
-		self.start_pos = self.prev_start_pos1
-		pass
-	else:
-		self.prev_start_pos1 = $Player.translation
-		self.start_pos = self.prev_start_pos0
-		pass
-		
-	start_pos_idx += 1
-	if start_pos_idx > 1:
-		start_pos_idx = 0
-	pass
-
-
 func game_lost():
 	game_over = true
 	$HUD.show_game_over()
@@ -221,10 +186,6 @@ func start_end_sequence():
 	$InvincibleTimer.stop()
 	invincible = true
 	end_sequence_started = true
-	
-	while extra_lives.size() > 0:
-		var el = extra_lives[0]
-		player_killed(el)
 	pass
 	
 
