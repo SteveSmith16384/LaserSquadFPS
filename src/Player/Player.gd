@@ -2,7 +2,7 @@ class_name Player
 extends KinematicBody
 
 
-const speed = 3#3.5#4
+const speed = 3.5#3.5#4
 const acceleration = 25
 const mouse_sensitivity = 0.3
 
@@ -145,7 +145,7 @@ func _physics_process(delta):
 	
 	if play_footstep:
 		play_footstep()
-		$Human.anim("Walk")
+		$Human.anim("Run")
 	else:
 		$Human.anim("Idle")
 	

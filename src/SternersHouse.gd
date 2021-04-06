@@ -4,10 +4,7 @@ extends Spatial
 
 func _ready():
 	place_droids()
-	
-	#var start = Vector3(8, 0, 2)
-	#var end = Vector3(13, 0, 6)
-	#var path = $Navigation.get_simple_path(start, end)
+	place_sterner()
 	pass
 
 
@@ -15,9 +12,16 @@ func place_droids():
 	var droid_start_positions = $DroidStartPositions
 	var droids = get_tree().get_nodes_in_group("droid")
 	for droid in droids:
-		var idx = 0#todo Globals.rnd.randi_range(0, droid_start_positions.get_child_count()-1)
+		var idx = Globals.rnd.randi_range(0, droid_start_positions.get_child_count()-1)
 		droid.translation = droid_start_positions.get_child(idx).translation;
 		droid_start_positions.remove_child(droid_start_positions.get_child(idx))
+	pass
+
+
+func place_sterner():
+	var sterner_start_positions = $SternerStartPositions
+	var idx = 0#Globals.rnd.randi_range(0, sterner_start_positions.get_child_count()-1)
+	$SternerRegnix.translation = sterner_start_positions.get_child(idx).translation;
 	pass
 
 

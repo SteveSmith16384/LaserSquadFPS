@@ -51,7 +51,6 @@ func _physics_process(delta):
 			# SHow debugging nodes
 			main.get_node("SternersHouse/FinalDest").translation = patrol_points[patrol_points.size()-1]
 			main.get_node("SternersHouse/FinalDest").translation.y = 0.5
-			#print("Got patrol points")
 			
 		var target = patrol_points[patrol_index]
 		target.y = 0

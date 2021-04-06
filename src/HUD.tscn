@@ -156,7 +156,6 @@ __meta__ = {
 }
 
 [node name="FPSLabel" type="Label" parent="."]
-visible = false
 margin_left = 15.119
 margin_top = 13.8591
 margin_right = 55.119
@@ -168,7 +167,6 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 
 [node name="DebugMode" type="Label" parent="."]
-visible = false
 margin_left = 915.962
 margin_top = 18.8988
 margin_right = 1009.96
