@@ -29,8 +29,8 @@ func _process(delta):
 		self.global_transform = Transform(Basis(wrotation), global_transform.origin)
 		
 		var human = $Human#.get_node("Human Armature")
-		print("Self rot: " + str(rotation_degrees.y))
-		print("Human rot: " + str(human.rotation_degrees.y))
+		#print("Self rot: " + str(rotation_degrees.y))
+		#print("Human rot: " + str(human.rotation_degrees.y))
 		human.rotation_degrees.y = self.rotation_degrees.y
 	pass
 

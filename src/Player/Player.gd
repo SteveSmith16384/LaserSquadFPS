@@ -11,7 +11,7 @@ var main : Main
 onready var head = $Head
 var first_person_camera : Camera
 var third_person_camera : Camera
-var gun
+#var gun
 
 var velocity = Vector3()
 var camera_x_rotation = 0
@@ -31,17 +31,29 @@ var origin : Vector3 = Vector3()
 var target_dist : float = 6.0
 var actual_dist : float = 0.0
 
+# Gun settings
+const laser_fire_rate = 0.2
+const clip_size = 8
+const laser_reload_rate = 0.8#1
+var current_ammo = clip_size
+var can_laser_fire = true
+var laser_reloading = false
+
+var bullet_class
 
 func _ready():
 	main = get_tree().get_root().get_node("Main")
 	first_person_camera = find_node("FirstPersonCamera")
 	third_person_camera = find_node("ThirdPersonCamera")
-	gun = find_node("gun")
+	#gun = find_node("gun")
 
 	start_y = self.translation.y
 
 	toggle_camera()
 	update_camera()
+
+	current_ammo = clip_size
+	bullet_class = preload("res://Bullet.tscn")
 	pass
 	
 	
@@ -78,9 +90,52 @@ func update_camera():
 	pass
 
 
+func _process(delta):
+	if alive == false:
+		return
+		
+	if Input.is_action_pressed("primary_fire") and can_laser_fire:
+		if current_ammo > 0 and not laser_reloading:
+			fire_bullet()
+		elif not laser_reloading:
+			reload()
+	
+	if Input.is_action_just_pressed("reload") and not laser_reloading:
+		reload()
+	pass
+
+
+func fire_bullet():
+	can_laser_fire = false
+	current_ammo -= 1
+	var bullet : Bullet = bullet_class.instance()
+	var main : Main = get_tree().get_root().get_node("Main")
+	main.add_child(bullet)
+	#todo $ShotAudio.play()
+	
+	bullet.transform = $Head.global_transform
+	bullet.translation = get_node("Head/Muzzle").global_transform.origin
+	
+	yield(get_tree().create_timer(laser_fire_rate), "timeout")
+
+	if current_ammo <= 0:
+		reload()
+		
+	can_laser_fire = true
+	pass
+
+
+func reload():
+	laser_reloading = true
+
+	yield(get_tree().create_timer(laser_reload_rate), "timeout")
+
+	current_ammo = clip_size
+	laser_reloading = false
+	pass
+	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("toggle_first_person"):
-		#set_first_person_mode(not first_person_mode)
 		if self.first_person_mode:
 			self.target_dist = 6
 		else:
@@ -109,7 +164,6 @@ func _physics_process(delta):
 		return
 		
 	play_footstep = false
-	#var on_floor = is_on_floor()
 	
 	var head_basis
 	if first_person_mode:

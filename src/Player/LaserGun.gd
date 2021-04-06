@@ -4,8 +4,6 @@ const laser_fire_rate = 0.2
 const clip_size = 8
 const laser_reload_rate = 0.8#1
 
-export var default_position : Vector3
-
 var main : Main
 var player : Player
 
@@ -19,7 +17,7 @@ func _ready():
 	main = get_tree().get_root().get_node("Main")
 	player = main.get_node("Player")
 
-	current_ammo = clip_size	
+	current_ammo = clip_size
 	
 	bullet_class = preload("res://Bullet.tscn")
 	pass
