@@ -1,6 +1,7 @@
 extends KinematicBody
 
 var bullet_class = preload("res://Bullet.tscn")
+var droid_corpse_class = preload("res://DestroyedRobot.tscn")
 
 var main : Main
 var player : Spatial
@@ -107,4 +108,9 @@ func _on_ShootTimer_timeout():
 
 func hit_by_bullet():
 	main.big_explosion(self)
+	
+	var corpse = droid_corpse_class.instance()
+	corpse.translation = self.translation
+	main.add_child(corpse)
+	
 	queue_free()

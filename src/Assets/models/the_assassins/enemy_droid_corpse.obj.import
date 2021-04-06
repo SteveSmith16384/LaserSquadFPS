@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/enemy_droid_corpse.obj-a244ac559a3e53b392f1a5df274ac7af.mesh"
+
+[deps]
+
+files=[ "res://.import/enemy_droid_corpse.obj-a244ac559a3e53b392f1a5df274ac7af.mesh" ]
+
+source_file="res://Assets/models/the_assassins/enemy_droid_corpse.obj"
+dest_files=[ "res://.import/enemy_droid_corpse.obj-a244ac559a3e53b392f1a5df274ac7af.mesh", "res://.import/enemy_droid_corpse.obj-a244ac559a3e53b392f1a5df274ac7af.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
