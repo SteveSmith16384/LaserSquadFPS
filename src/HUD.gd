@@ -13,23 +13,19 @@ func _ready():
 
 
 func update_time_label(s : int):
-	$InGame/HBoxContainer/TimeLabel.set_text("TIME: " + str(s))
-	pass
-	
-	
-func update_score_label(s : int):
-	$InGame/HBoxContainer/ScoreLabel.set_text("SCORE: " + str(s))
+	$InGame/HBoxContainer/TimeLabel.set_text("TIME LEFT: " + str(s))
 	pass
 	
 	
 func update_lives_label(s : int):
-	$InGame/HBoxContainer/LivesLabel.set_text("LIVES: " + str(s))
+	$InGame/HBoxContainer/LivesLabel.set_text("UNITS LEFT: " + str(s))
 	pass
 	
 
 func show_well_done():
 	$InGame.visible = false
 	$WellDone.visible = true
+	
 	pass
 
 

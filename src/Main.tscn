@@ -82,6 +82,9 @@ wait_time = 10.0
 autostart = true
 
 [node name="SternersHouse" parent="." instance=ExtResource( 2 )]
+
+[node name="HudTimer" type="Timer" parent="."]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
 [connection signal="timeout" from="InvincibleTimer" to="." method="_on_InvincibleTimer_timeout"]
 [connection signal="timeout" from="AmbienceTimer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="HudTimer" to="." method="_on_HudTimer_timeout"]

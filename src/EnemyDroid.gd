@@ -97,6 +97,9 @@ func _on_Area_body_exited(body):
 func _on_ShootTimer_timeout():
 	if player.alive == false:
 		return
+	
+	if main.game_over:
+		return
 		
 	if player_in_area && can_see_player:
 		var bullet : Bullet = bullet_class.instance()

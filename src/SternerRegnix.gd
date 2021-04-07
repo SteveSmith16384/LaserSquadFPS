@@ -12,7 +12,7 @@ func _ready():
 	main = get_tree().get_root().get_node("Main")
 	player = main.get_node("Player")
 
-	get_node("Human").set_texture_to_white()
+	#get_node("Human").set_texture_to_white()
 	get_node("Human").anim("Idle")
 	pass
 
@@ -21,17 +21,20 @@ func _process(delta):
 	if player.alive == false:
 		return
 		
-	if player_in_area && can_see_player:
+	if main.game_over:
+		return
+		
+	if true or (player_in_area && can_see_player):
 		var us = self.translation
 		var them = player.translation
 		var wtransform = global_transform.looking_at(Vector3(them.x,us.y,them.z),Vector3(0,1,0))
 		var wrotation = Quat(global_transform.basis).slerp(Quat(wtransform.basis), delta*5)
 		self.global_transform = Transform(Basis(wrotation), global_transform.origin)
 		
-		var human = $Human#.get_node("Human Armature")
+		#var human = $Human#.get_node("Human Armature")
 		#print("Self rot: " + str(rotation_degrees.y))
 		#print("Human rot: " + str(human.rotation_degrees.y))
-		human.rotation_degrees.y = self.rotation_degrees.y
+		#human.rotation_degrees.y = self.rotation_degrees.y
 	pass
 
 
@@ -42,7 +45,7 @@ func _physics_process(delta):
 	var space_state = get_world().direct_space_state
 	var result : Dictionary = space_state.intersect_ray(self.translation, player.translation, [player, self]);
 	can_see_player = result.empty()
-	$Human.visible = true# todo can_see_player
+	$Human.visible = can_see_player
 	
 	
 func _on_Area_body_entered(body):
@@ -61,7 +64,10 @@ func _on_ShootTimer_timeout():
 	if player.alive == false:
 		return
 		
-	if false and player_in_area && can_see_player:
+	if main.game_over:
+		return
+		
+	if player_in_area && can_see_player:
 		var bullet : Bullet = bullet_class.instance()
 		main.add_child(bullet)
 		bullet.transform = global_transform
@@ -70,5 +76,7 @@ func _on_ShootTimer_timeout():
 
 
 func hit_by_bullet():
+	get_node("Human").anim("Die")
 	main.big_explosion(self)
-	queue_free()
+	main.sterner_killed()
+	#queue_free()

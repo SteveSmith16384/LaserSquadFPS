@@ -43,9 +43,21 @@ margin_top = 105.0
 margin_right = 813.0
 margin_bottom = 238.0
 custom_fonts/font = SubResource( 1 )
-text = "YOU HAVE COMPLETED
- THE GAME!"
+text = "YOU HAVE KILLED
+ STERNER REGNIX"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressEsc2" type="Label" parent="WellDone/VBoxContainer"]
+margin_top = 278.0
+margin_right = 813.0
+margin_bottom = 311.0
+custom_fonts/font = SubResource( 2 )
+text = "PRESS ESC TO RETURN"
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -72,7 +84,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WDLabel3" type="Label" parent="GameOver/VBoxContainer"]
+[node name="PressEsc" type="Label" parent="GameOver/VBoxContainer"]
 margin_top = 105.0
 margin_right = 813.0
 margin_bottom = 138.0
@@ -121,9 +133,9 @@ __meta__ = {
 }
 
 [node name="TimeLabel" type="Label" parent="InGame/HBoxContainer"]
-margin_left = 96.0
+margin_left = 248.0
 margin_top = 11.0
-margin_right = 158.0
+margin_right = 310.0
 margin_bottom = 28.0
 theme = ExtResource( 2 )
 text = "TIME: 0"
@@ -131,22 +143,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreLabel" type="Label" parent="InGame/HBoxContainer"]
-margin_left = 238.0
-margin_top = 1.0
-margin_right = 310.0
-margin_bottom = 38.0
-theme = ExtResource( 2 )
-text = "AMMO: 0
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="LivesLabel" type="Label" parent="InGame/HBoxContainer"]
-margin_left = 390.0
+visible = false
+margin_left = 314.0
 margin_top = 1.0
-margin_right = 462.0
+margin_right = 386.0
 margin_bottom = 38.0
 theme = ExtResource( 2 )
 text = "AMMO: 0
