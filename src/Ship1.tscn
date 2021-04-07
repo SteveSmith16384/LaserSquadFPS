@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/models/ships/CamoStellarJet.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/models/ships/CamoStellarJet.png" type="Texture" id=2]
+[ext_resource path="res://JetParticles.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[node name="Ship1" type="MeshInstance"]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+
+[node name="CPUParticles" parent="Spatial" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.985855, 0, 0.508322 )
+initial_velocity = 3.0
+
+[node name="CPUParticles2" parent="Spatial" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.901518, 0, 0.508322 )
+initial_velocity = 3.0
