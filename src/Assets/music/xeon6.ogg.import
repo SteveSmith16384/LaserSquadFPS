@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/xeon6.ogg-ad47c08982f705493bd8f9823a9f8a2e.oggstr"
+
+[deps]
+
+source_file="res://Assets/music/xeon6.ogg"
+dest_files=[ "res://.import/xeon6.ogg-ad47c08982f705493bd8f9823a9f8a2e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
