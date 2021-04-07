@@ -68,6 +68,7 @@ func _on_ShootTimer_timeout():
 		return
 		
 	if player_in_area && can_see_player:
+		$Audio_Shoot.play()
 		var bullet : Bullet = bullet_class.instance()
 		main.add_child(bullet)
 		bullet.transform = global_transform

@@ -38,7 +38,7 @@ script = ExtResource( 8 )
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4652, 0.662287, 6.22679 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92858, 0.662287, 3.23 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )

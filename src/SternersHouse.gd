@@ -20,13 +20,13 @@ func place_droids():
 
 func place_sterner():
 	var sterner_start_positions = $SternerStartPositions
-	var idx = 0#Globals.rnd.randi_range(0, sterner_start_positions.get_child_count()-1)
+	var idx = Globals.rnd.randi_range(0, sterner_start_positions.get_child_count()-1)
 	$SternerRegnix.translation = sterner_start_positions.get_child(idx).translation;
 	pass
 
 
 func get_rnd_destination():
-	var points = $RoutePoints# $Path.curve.get_baked_points();
+	var points = $RoutePoints
 	var dest = points.get_node("RoutePoint" + str(Globals.rnd.randi_range(1, points.get_child_count())))
 	return dest.translation
 	

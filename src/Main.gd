@@ -32,7 +32,7 @@ func _ready():
 
 	time_left = Globals.START_TIME_SECONDS
 	$HUD.update_time_label(time_left)
-	$HUD.update_lives_label(1) # todo
+	#$HUD.update_lives_label(1) # todo
 	
 	self.set_first_person($Player.first_person_mode)
 	pass
@@ -80,7 +80,6 @@ func player_killed():
 
 	$Player.alive = false
 	self.small_explosion($Player)
-	#$Music.stop()
 	$Player.get_node("Audio_Hit").play()
 	if lives > 0:
 		$RestartTimer.start()
