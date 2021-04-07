@@ -7,7 +7,6 @@ Programmed by Stephen Smith (stephen.carlylesmith@googlemail.com).  Twitter: @st
 Gameplay Video: [todo]
 
 
-
 ## Controls
 * W, A, S, D and mouse.
 * LMB - Shoot

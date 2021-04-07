@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/toggle2.wav-e46b3c0ef19ae9624e2f529056d206ab.sample"
+path="res://.import/slidingdoor.wav-8b25dcae9937c9a25fa8644aac3d30ab.sample"
 
 [deps]
 
-source_file="res://Assets/sfx/toggle2.wav"
-dest_files=[ "res://.import/toggle2.wav-e46b3c0ef19ae9624e2f529056d206ab.sample" ]
+source_file="res://Assets/sfx/slidingdoor.wav"
+dest_files=[ "res://.import/slidingdoor.wav-8b25dcae9937c9a25fa8644aac3d30ab.sample" ]
 
 [params]
 

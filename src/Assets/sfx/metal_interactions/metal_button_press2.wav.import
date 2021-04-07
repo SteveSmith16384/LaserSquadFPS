@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/metal_button_press2.wav-9cc2711fe9bc7220359a1f83e2359ece.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/metal_interactions/metal_button_press2.wav"
+dest_files=[ "res://.import/metal_button_press2.wav-9cc2711fe9bc7220359a1f83e2359ece.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/models/the_assassins/enemy_droid.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://EnemyDroid.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Cyan_Material.tres" type="Material" id=3]
+[ext_resource path="res://Assets/sfx/launches/flaunch.wav" type="AudioStream" id=4]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.504654
@@ -33,6 +34,9 @@ autostart = true
 
 [node name="Muzzle" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17032, -0.835943 )
+
+[node name="Audio_Shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

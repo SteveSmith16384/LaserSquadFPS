@@ -111,7 +111,7 @@ func fire_bullet():
 	var bullet : Bullet = bullet_class.instance()
 	var main : Main = get_tree().get_root().get_node("Main")
 	main.add_child(bullet)
-	#todo $ShotAudio.play()
+	$Audio_Shoot.play()
 	
 	bullet.transform = $Head.global_transform
 	bullet.translation = get_node("Head/Muzzle").global_transform.origin
@@ -230,6 +230,8 @@ func set_first_person_mode(b):
 
 
 func play_footstep():
+	return# A bit annoying?
+	
 	if actually_play_footstep == false:
 		return
 		
@@ -238,7 +240,7 @@ func play_footstep():
 	$AudioStreamPlayer_Generic.stream = sfx
 	$AudioStreamPlayer_Generic.play()
 	
-	yield(get_tree().create_timer(.45), "timeout")
+	yield(get_tree().create_timer(.35), "timeout")
 	actually_play_footstep = true
 	pass
 
@@ -251,6 +253,7 @@ func restart(trans):
 	
 	
 func hit_by_bullet():
+	$Audio_Hit.play()
 	main.player_hit()
 	pass
 	

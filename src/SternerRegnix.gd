@@ -76,6 +76,7 @@ func _on_ShootTimer_timeout():
 
 
 func hit_by_bullet():
+	$Audio_Scream.play()
 	get_node("Human").anim("Die")
 	main.big_explosion(self)
 	main.sterner_killed()
