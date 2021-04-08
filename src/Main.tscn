@@ -49,14 +49,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5026, 12.7261, 5.16714 )
 [node name="PurplePlanet" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62313, 13.9857, 6.14524 )
 
-[node name="RestartTimer" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="StartPosition" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42207, 5.0172, 1.03486 )
-
-[node name="InvincibleTimer" type="Timer" parent="."]
-wait_time = 4.0
 
 [node name="Sounds" type="Spatial" parent="."]
 
@@ -85,7 +79,5 @@ autostart = true
 
 [node name="HudTimer" type="Timer" parent="."]
 autostart = true
-[connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
-[connection signal="timeout" from="InvincibleTimer" to="." method="_on_InvincibleTimer_timeout"]
 [connection signal="timeout" from="AmbienceTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="HudTimer" to="." method="_on_HudTimer_timeout"]

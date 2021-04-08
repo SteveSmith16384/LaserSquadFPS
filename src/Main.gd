@@ -27,8 +27,6 @@ func _process(delta):
 		return
 		
 	if game_over:
-#		if Input.is_action_just_pressed("primary_fire"):
-#			get_tree().change_scene("res://IntroScene.tscn")
 		return
 		
 	time_left -= delta
@@ -58,33 +56,13 @@ func player_killed():
 	if invincible:
 		return
 		
-	$Player.set_first_person_mode(false)
 	$Player/Human.anim("Die")
-
 	$Player.alive = false
 	self.small_explosion($Player)
-	$Player.get_node("Audio_Hit").play()
-#	if lives > 0:
-#		$RestartTimer.start()
-#	else:
 	game_lost()
 	pass
 	
 	
-func restart_player():
-	#todo $HUD.update_lives_label(extra_lives.size()+1)
-	
-	invincible = true
-	$InvincibleTimer.start()
-	pass
-	
-
-func _on_RestartTimer_timeout():
-	$RestartTimer.stop()
-	restart_player()
-	pass
-
-
 func tiny_explosion(spatial):
 	#var expl = load("res://TinyExplosion.tscn")	
 	var i = tiny_expl.instance()
