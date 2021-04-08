@@ -71,12 +71,24 @@ __meta__ = {
 }
 
 [node name="CreditsLabel2" type="Label" parent="Node2D"]
-margin_left = 10.7612
+margin_left = 194.71
 margin_top = 570.395
-margin_right = 649.761
-margin_bottom = 587.395
+margin_right = 859.71
+margin_bottom = 607.395
 theme = ExtResource( 7 )
 text = "Programmed by Stephen Smith based on the game by julian Gollop
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsLabel3" type="Label" parent="Node2D"]
+margin_left = 366.059
+margin_top = 16.0294
+margin_right = 1031.06
+margin_bottom = 53.0294
+theme = ExtResource( 7 )
+text = "Can you find and kill Sterner Regnix?
 "
 __meta__ = {
 "_edit_use_anchors_": false

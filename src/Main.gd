@@ -1,14 +1,6 @@
 class_name Main
 extends Spatial
 
-var start_pos : Vector3
-
-var prev_start_pos0 : Vector3
-var prev_start_pos1 : Vector3
-var start_pos_idx : int = 0
-
-var score : int = 0
-var lives : int = 0
 var invincible = false
 
 var tiny_expl = preload("res://TinyExplosion.tscn")	
@@ -17,22 +9,13 @@ var big_expl = preload("res://BigExplosion.tscn")
 
 var time_left : float
 var game_over = false
-var end_sequence_started = false
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	if Globals.DEBUG_START_POS:
-		$Player.translation = $StartPosition.translation
-	
-	start_pos = $Player.translation
-	prev_start_pos0 = $Player.translation
-	prev_start_pos1 = $Player.translation
-
 	time_left = Globals.START_TIME_SECONDS
 	$HUD.update_time_label(time_left)
-	#$HUD.update_lives_label(1) # todo
 	
 	self.set_first_person($Player.first_person_mode)
 	pass
@@ -81,10 +64,10 @@ func player_killed():
 	$Player.alive = false
 	self.small_explosion($Player)
 	$Player.get_node("Audio_Hit").play()
-	if lives > 0:
-		$RestartTimer.start()
-	else:
-		game_lost()
+#	if lives > 0:
+#		$RestartTimer.start()
+#	else:
+	game_lost()
 	pass
 	
 	

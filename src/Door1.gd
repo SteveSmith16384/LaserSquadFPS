@@ -1,10 +1,8 @@
 extends Spatial
 
-
 var pos_x = 0
 var opening = false
 var closing = false
-
 
 func _ready():
 	pass
@@ -37,11 +35,13 @@ func _on_Area_body_entered(body):
 		closing = false
 		$CloseTimer.stop()
 		$CloseTimer.start()
+		$Audio_OpenClose.play()
 	pass
 
 
 func _on_CloseTimer_timeout():
 	closing = true
+	$Audio_OpenClose.play()
 	pass
 
 
