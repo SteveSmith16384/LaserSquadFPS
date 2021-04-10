@@ -8,6 +8,7 @@ var player : Spatial
 
 var player_in_area = false
 var can_see_player = false
+var destroyed = false
 
 const move_speed = 2
 var patrol_path : Path
@@ -23,6 +24,10 @@ func _ready():
 
 
 func _process(delta):
+	if destroyed:
+		self.rotation_degrees.y += delta * 1000
+		return
+		
 	if player.alive == false:
 		return
 		
@@ -37,6 +42,9 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	if destroyed:
+		return
+		
 	if player.alive == false:
 		return
 		
@@ -110,6 +118,13 @@ func _on_ShootTimer_timeout():
 
 
 func hit_by_bullet():
+	main.small_explosion(self)
+	destroyed = true
+	$Death_Timer.start()
+	$MeshInstance.visible = true
+	pass
+
+func _on_Death_Timer_timeout():
 	main.big_explosion(self)
 	
 	var corpse = droid_corpse_class.instance()
@@ -117,3 +132,4 @@ func hit_by_bullet():
 	main.add_child(corpse)
 	
 	queue_free()
+	pass # Replace with function body.
