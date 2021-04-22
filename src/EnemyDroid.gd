@@ -109,6 +109,9 @@ func _on_ShootTimer_timeout():
 	if main.game_over:
 		return
 		
+	if destroyed:
+		return
+		
 	if player_in_area && can_see_player:
 		var bullet : Bullet = bullet_class.instance()
 		main.add_child(bullet)

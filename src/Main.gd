@@ -106,15 +106,8 @@ func game_lost():
 	pass
 	
 
-func _on_InvincibleTimer_timeout():
-	invincible = false
-	$InvincibleTimer.stop()
-	pass
-
-
 func sterner_killed():
 	$Sounds/VictoryMusic.play()
-	$InvincibleTimer.stop()
 	invincible = true
 	$HUD.show_well_done()
 	game_over = true
