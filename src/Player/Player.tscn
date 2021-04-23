@@ -20,7 +20,8 @@ transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.50883, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59345, 0 )
 
 [node name="FirstPersonCamera" type="Camera" parent="Head"]
-far = 35.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.360422, 0 )
+far = 25.0
 
 [node name="Muzzle" type="Spatial" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317776, -0.961556 )
@@ -36,6 +37,7 @@ volume_db = -6.058
 [node name="AudioStreamPlayer_Generic" type="AudioStreamPlayer" parent="."]
 
 [node name="ThirdPersonCamera" type="Camera" parent="."]
+far = 50.0
 
 [node name="Audio_Shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

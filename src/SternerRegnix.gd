@@ -19,6 +19,7 @@ func _ready():
 
 func _process(delta):
 	if player.alive == false:
+		$Human.visible = true
 		return
 		
 	if main.game_over:
@@ -81,4 +82,3 @@ func hit_by_bullet():
 	get_node("Human").anim("Die")
 	main.big_explosion(self)
 	main.sterner_killed()
-	#queue_free()

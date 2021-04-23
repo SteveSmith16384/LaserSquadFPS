@@ -29,6 +29,7 @@ func _process(delta):
 		return
 		
 	if player.alive == false:
+		$MeshInstance.visible = true
 		return
 		
 	if player_in_area && can_see_player:

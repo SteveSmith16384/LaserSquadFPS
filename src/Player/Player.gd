@@ -11,7 +11,6 @@ var main : Main
 onready var head = $Head
 var first_person_camera : Camera
 var third_person_camera : Camera
-#var gun
 
 var velocity = Vector3()
 var camera_x_rotation = 0
@@ -45,7 +44,6 @@ func _ready():
 	main = get_tree().get_root().get_node("Main")
 	first_person_camera = find_node("FirstPersonCamera")
 	third_person_camera = find_node("ThirdPersonCamera")
-	#gun = find_node("gun")
 
 	start_y = self.translation.y
 
@@ -82,10 +80,8 @@ func update_camera():
 	if alive:
 		if first_person_mode:
 			var rot = head.rotation_degrees.y
-			#$MeshSpatial.rotation_degrees.y = rot
 			$Human.rotation_degrees.y = rot + 180
 		else:
-			#$MeshSpatial.rotation_degrees.y = third_person_camera.rotation_degrees.y
 			$Human.rotation_degrees.y = third_person_camera.rotation_degrees.y + 180
 	pass
 
