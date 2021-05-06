@@ -18,6 +18,11 @@ func _ready():
 	$HUD.update_time_label(time_left)
 	
 	self.set_first_person($Player.first_person_mode)
+	
+	# Preload explosions
+	self.big_explosion($DirectionalLight)
+	self.small_explosion($DirectionalLight)
+	self.tiny_explosion($DirectionalLight)
 	pass
 	
 
