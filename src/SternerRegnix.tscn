@@ -40,6 +40,7 @@ stream = ExtResource( 4 )
 
 [node name="Eyes" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44221, 0 )
+
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

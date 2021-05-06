@@ -25,7 +25,7 @@ func _process(delta):
 	if main.game_over:
 		return
 		
-	if true or (player_in_area && can_see_player):
+	if player_in_area && can_see_player:
 		var us = self.translation
 		var them = player.translation
 		var wtransform = global_transform.looking_at(Vector3(them.x,us.y,them.z),Vector3(0,1,0))

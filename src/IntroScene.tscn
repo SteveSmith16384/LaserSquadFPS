@@ -123,4 +123,5 @@ texture = ExtResource( 3 )
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 922.262, 78.1151 )
 texture = ExtResource( 3 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
