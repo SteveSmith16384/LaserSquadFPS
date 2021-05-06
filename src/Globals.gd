@@ -1,6 +1,6 @@
 extends Node
 
-const VERSION = "1"
+const VERSION = "1.1"
 const RELEASE_MODE = true
 const DEBUG_START_POS = false and !RELEASE_MODE # If true, uses StartPos in main for player's start position
 const NO_ENEMIES = false and !RELEASE_MODE

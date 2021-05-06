@@ -50,7 +50,13 @@ func _physics_process(delta):
 		return
 		
 	var space_state = get_world().direct_space_state
-	var result : Dictionary = space_state.intersect_ray(self.translation, player.translation, [player]);
+	var players_eyes = player.get_eyes_position()
+	var result : Dictionary = space_state.intersect_ray($Eyes.global_transform.origin, players_eyes, [player]);
+	#var ray_pos = self.translation#$RayCast.global_transform.origin
+	#var pos = players_eyes - ray_pos
+	#$RayCast.set_cast_to(pos)
+	#var c = $RayCast.get_collider()
+	#can_see_player = not $RayCast.is_colliding()# result.empty()
 	can_see_player = result.empty()
 	$MeshInstance.visible = can_see_player
 

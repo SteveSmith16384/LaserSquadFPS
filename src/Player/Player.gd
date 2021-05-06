@@ -101,6 +101,10 @@ func _process(delta):
 	pass
 
 
+func get_eyes_position():
+	return $Head/FirstPersonCamera.global_transform.origin
+	
+	
 func fire_bullet():
 	can_laser_fire = false
 	current_ammo -= 1

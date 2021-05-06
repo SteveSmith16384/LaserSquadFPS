@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/models/the_assassins/wall_window.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/models/the_assassins/wall_window.png" type="Texture" id=2]
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.813411, 0.463481, 0.14477 )
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+metallic = 0.5
+roughness = 0.5
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.804636, 0.195967, 0.165971 )
+extents = Vector3( 0.813411, 0.463481, 0.14477 )
 
 [sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.804636, 0.195967, 0.165971 )
+
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.240981, 0.516484, 0.143523 )
 
 [node name="Wall_Window" type="StaticBody"]
@@ -16,20 +22,20 @@ extents = Vector3( 0.240981, 0.516484, 0.143523 )
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19861, 0, -1.75984 )
 mesh = ExtResource( 1 )
-material/0 = null
+material/0 = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43307, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95955, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.530028, 1.29171, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.604231, 1.35532, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )

@@ -6,6 +6,8 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
+metallic = 0.5
+roughness = 0.5
 
 [node name="Ship1" type="MeshInstance"]
 mesh = ExtResource( 1 )

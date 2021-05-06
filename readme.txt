@@ -9,7 +9,7 @@ Gameplay Video: https://www.youtube.com/watch?v=R3pW7zwE4YI
 
 ## Controls
 * W, A, S, D and mouse.
-* F - Toggle first person (1 & 2 to zoom in and out)
+* F - Toggle first person (press 1 & 2 to zoom in and out)
 * LMB - Shoot
 * Esc - quit
 
@@ -19,6 +19,7 @@ Since the app is not signed for a Mac (I don't even have a Mac), it shows "Appli
 
 
 ## Credits
+* Original game design by Julian Gollop
 * Intro music by Bart, taken from https://opengameart.org/content/xeon-theme-remastered
 * Human models by Quaternius: https://quaternius.itch.io/
 * Spaceship model: https://maxparata.itch.io/voxel-spaceships

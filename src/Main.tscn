@@ -66,7 +66,6 @@ stream = ExtResource( 10 )
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.923451, 0.166174, 0.345867, 0.15378, -0.665539, 0.730349, 0.351553, 0.727629, 0.589039, -1.29142, 6.00791, -6.90629 )
 shadow_enabled = true
-shadow_color = Color( 1, 1, 1, 1 )
 
 [node name="AudioAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

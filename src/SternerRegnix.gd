@@ -44,7 +44,8 @@ func _physics_process(delta):
 		return
 		
 	var space_state = get_world().direct_space_state
-	var result : Dictionary = space_state.intersect_ray(self.translation, player.translation, [player, self]);
+	var players_eyes = player.get_eyes_position()
+	var result : Dictionary = space_state.intersect_ray($Eyes.global_transform.origin, players_eyes, [player]);
 	can_see_player = result.empty()
 	$Human.visible = can_see_player
 	

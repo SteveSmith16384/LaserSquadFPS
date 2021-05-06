@@ -59,7 +59,6 @@ autoplay = true
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="VersionLabel" type="Label" parent="Node2D"]
-visible = false
 margin_left = 897.066
 margin_top = 570.395
 margin_right = 1001.07

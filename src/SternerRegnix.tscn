@@ -9,7 +9,7 @@
 extents = Vector3( 0.256196, 0.793259, 0.412134 )
 
 [sub_resource type="ConvexPolygonShape" id=2]
-points = PoolVector3Array( 0, 1, 0, -10, 0, -10, -10, 2, -10, 10, 0, -10, 10, 2, -10 )
+points = PoolVector3Array( 0, 1, 0, -10, 0, -20, -10, 2, -20, 10, 0, -20, 10, 2, -20 )
 
 [node name="SternerRegnix" type="KinematicBody"]
 script = ExtResource( 2 )
@@ -37,6 +37,9 @@ stream = ExtResource( 3 )
 
 [node name="Audio_Shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Eyes" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44221, 0 )
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

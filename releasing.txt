@@ -4,4 +4,3 @@ Check all debugging is turned off
 Inc version num
 Copy in new readme
 Tweet with animated gif!
-Show version num
