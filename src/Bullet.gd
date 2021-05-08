@@ -3,7 +3,7 @@ extends KinematicBody
 
 const SPEED = 20
 
-var main : Main
+var main #: Main
 var dir : Vector3
 
 func _ready():

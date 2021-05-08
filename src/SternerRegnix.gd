@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var bullet_class = preload("res://Bullet.tscn")
+onready var bullet_class = preload("res://Bullet.tscn")
 
 var main : Main
 var player : Spatial
@@ -18,6 +18,9 @@ func _ready():
 
 
 func _process(delta):
+	if player == null:
+		return
+		
 	if player.alive == false:
 		$Human.visible = true
 		return
@@ -40,6 +43,9 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	if player == null:
+		return
+		
 	if player.alive == false:
 		return
 		
@@ -63,6 +69,9 @@ func _on_Area_body_exited(body):
 
 
 func _on_ShootTimer_timeout():
+	if player == null:
+		return
+		
 	if player.alive == false:
 		return
 		

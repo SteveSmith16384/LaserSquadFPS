@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var bullet_class = preload("res://Bullet.tscn")
+onready var bullet_class = preload("res://Bullet.tscn")
 var droid_corpse_class = preload("res://DestroyedRobot.tscn")
 
 var main : Main
@@ -28,6 +28,9 @@ func _process(delta):
 		self.rotation_degrees.y += delta * 1000
 		return
 		
+	if player == null:
+		return
+		
 	if player.alive == false:
 		$MeshInstance.visible = true
 		return
@@ -44,6 +47,9 @@ func _process(delta):
 
 func _physics_process(delta):
 	if destroyed:
+		return
+		
+	if player == null:
 		return
 		
 	if player.alive == false:
@@ -110,6 +116,9 @@ func _on_Area_body_exited(body):
 
 
 func _on_ShootTimer_timeout():
+	if player == null:
+		return
+		
 	if player.alive == false:
 		return
 	

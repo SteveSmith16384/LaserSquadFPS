@@ -5,7 +5,7 @@ const speed = 3.5
 const acceleration = 25
 const mouse_sensitivity = 0.3
 
-var main : Main
+var main# : Main
 
 #onready var head = $Head
 var head : Spatial
@@ -42,8 +42,8 @@ var bullet_class
 
 func _ready():
 	main = get_tree().get_root().get_node("Main")
-	first_person_camera = find_node("FirstPersonCamera")
-	third_person_camera = find_node("ThirdPersonCamera")
+	#first_person_camera = find_node("FirstPersonCamera")
+	#third_person_camera = find_node("ThirdPersonCamera")
 
 	start_y = self.translation.y
 
@@ -51,15 +51,23 @@ func _ready():
 	update_camera()
 
 	current_ammo = clip_size
+
+	head = $Head
+	first_person_camera = $Head/FirstPersonCamera
+
 	bullet_class = preload("res://Bullet.tscn")
 	pass
 	
 
 func set_head(_head):
-	head = _head
-	self.first_person_camera = head.get_node("FirstPersonCamera")
+	#head = _head
+	#self.first_person_camera = head.get_node("FirstPersonCamera")
 	pass
 	
+
+func _unhandled_input(event):
+	_input(event)
+	pass
 	
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -120,8 +128,11 @@ func get_eyes_position():
 func fire_bullet():
 	can_laser_fire = false
 	current_ammo -= 1
+	
+	#if bullet_class == null:
+	#	bullet_class = preload("res://Bullet.tscn")	
+
 	var bullet : Bullet = bullet_class.instance()
-	var main : Main = get_tree().get_root().get_node("Main")
 	main.add_child(bullet)
 	$Audio_Shoot.play()
 	
@@ -146,6 +157,7 @@ func reload():
 	laser_reloading = false
 	pass
 	
+
 func _physics_process(delta):
 	if Input.is_action_just_pressed("toggle_first_person"):
 		if self.first_person_mode:

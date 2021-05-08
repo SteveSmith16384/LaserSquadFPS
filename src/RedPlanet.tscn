@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/models/red_planet.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://Resources/Red_Material.tres" type="Material" id=2]
-[ext_resource path="res://Planet.gd" type="Script" id=3]
 
 [node name="RedPlanet" type="MeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1659, 12.7261, 0 )
 cast_shadow = 0
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )
-script = ExtResource( 3 )

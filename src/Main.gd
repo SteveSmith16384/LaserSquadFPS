@@ -10,6 +10,7 @@ var big_expl = preload("res://BigExplosion.tscn")
 var time_left : float
 var game_over = false
 
+var player
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -17,13 +18,15 @@ func _ready():
 	time_left = Globals.START_TIME_SECONDS
 	$HUD.update_time_label(time_left)
 	
-	var head_class = preload("res://Player/Head.tscn")
+	var player_class = preload("res://Player/Player.tscn")
 
 	# Add a player. Possible values 0 - 3. Returns a TextureRect with some extra goodies attached
 	var render = $Splitscreen.add_player(0)
-	var cam = head_class.instance()# $Player/Head
-	$Player.set_head(cam)
-	render.viewport.add_child(cam)
+	player = player_class.instance()# $Player/Head
+	player.set_process_input(true)
+	#$Player.set_head(cam)
+	player.translation = $StartPosition.translation
+	render.viewport.add_child(player)
 	
 	#-------------------------------
 	render = $Splitscreen.add_player(1)
@@ -39,6 +42,10 @@ func _ready():
 	pass
 	
 
+func _input(event):
+	player._input(event)
+	pass
+	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://IntroScene.tscn")
