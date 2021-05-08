@@ -1,7 +1,6 @@
 class_name Player
 extends KinematicBody
 
-
 const speed = 3.5#3.5#4
 const acceleration = 25
 const mouse_sensitivity = 0.3
@@ -96,8 +95,8 @@ func _process(delta):
 		elif not laser_reloading:
 			reload()
 	
-	if Input.is_action_just_pressed("reload") and not laser_reloading:
-		reload()
+	#if Input.is_action_just_pressed("reload") and not laser_reloading:
+	#	reload()
 	pass
 
 
