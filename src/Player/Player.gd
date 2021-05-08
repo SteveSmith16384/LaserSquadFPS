@@ -1,15 +1,16 @@
 class_name Player
 extends KinematicBody
 
-const speed = 3.5#3.5#4
+const speed = 3.5
 const acceleration = 25
 const mouse_sensitivity = 0.3
 
 var main : Main
 
-onready var head = $Head
+#onready var head = $Head
+var head : Spatial
 var first_person_camera : Camera
-var third_person_camera : Camera
+var third_person_camera #: Camera
 
 var velocity = Vector3()
 var camera_x_rotation = 0
@@ -26,7 +27,7 @@ var mouseSensitivity = 0.1
 var yaw_y : float = 0.0
 var pitch_x : float = -45.0
 var origin : Vector3 = Vector3()
-var target_dist : float = 6.0
+var target_dist : float = 0#6.0
 var actual_dist : float = 0.0
 
 # Gun settings
@@ -46,11 +47,17 @@ func _ready():
 
 	start_y = self.translation.y
 
-	toggle_camera()
+	#toggle_camera()
 	update_camera()
 
 	current_ammo = clip_size
 	bullet_class = preload("res://Bullet.tscn")
+	pass
+	
+
+func set_head(_head):
+	head = _head
+	self.first_person_camera = head.get_node("FirstPersonCamera")
 	pass
 	
 	
@@ -73,19 +80,25 @@ func _input(event):
 
 
 func update_camera():
-	third_person_camera.set_rotation(Vector3(deg2rad(pitch_x), deg2rad(yaw_y), 0.0))
-	third_person_camera.set_translation(origin - actual_dist * third_person_camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5))
+	if third_person_camera:
+		third_person_camera.set_rotation(Vector3(deg2rad(pitch_x), deg2rad(yaw_y), 0.0))
+		third_person_camera.set_translation(origin - actual_dist * third_person_camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5))
 	
 	if alive:
-		if first_person_mode:
+		if first_person_mode and head:
 			var rot = head.rotation_degrees.y
 			$Human.rotation_degrees.y = rot + 180
 		else:
-			$Human.rotation_degrees.y = third_person_camera.rotation_degrees.y + 180
+			if third_person_camera:
+				$Human.rotation_degrees.y = third_person_camera.rotation_degrees.y + 180
 	pass
 
 
 func _process(delta):
+	# Position camera
+	head.translation = self.translation
+	head.translation.y += .5
+	
 	if alive == false:
 		return
 		
@@ -101,7 +114,7 @@ func _process(delta):
 
 
 func get_eyes_position():
-	return $Head/FirstPersonCamera.global_transform.origin
+	return head.global_transform.origin
 	
 	
 func fire_bullet():
@@ -112,8 +125,8 @@ func fire_bullet():
 	main.add_child(bullet)
 	$Audio_Shoot.play()
 	
-	bullet.transform = $Head.global_transform
-	bullet.translation = get_node("Head/Muzzle").global_transform.origin
+	bullet.transform = head.global_transform
+	bullet.translation = head.get_node("Muzzle").global_transform.origin
 	
 	yield(get_tree().create_timer(laser_fire_rate), "timeout")
 
@@ -168,7 +181,8 @@ func _physics_process(delta):
 	if first_person_mode:
 		head_basis = head.get_global_transform().basis
 	else:
-		head_basis = third_person_camera.get_global_transform().basis
+		if third_person_camera:
+			head_basis = third_person_camera.get_global_transform().basis
 		
 	var direction = Vector3()
 	if Input.is_action_pressed("move_forward"):
@@ -222,7 +236,8 @@ func set_first_person_mode(b):
 	main.set_first_person(first_person_mode)
 
 	self.first_person_camera.current = first_person_mode
-	self.third_person_camera.current = !first_person_mode
+	if third_person_camera:
+		self.third_person_camera.current = !first_person_mode
 	
 	self.update_camera();
 	pass

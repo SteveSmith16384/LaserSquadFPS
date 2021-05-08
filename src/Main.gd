@@ -17,7 +17,20 @@ func _ready():
 	time_left = Globals.START_TIME_SECONDS
 	$HUD.update_time_label(time_left)
 	
-	self.set_first_person($Player.first_person_mode)
+	var head_class = preload("res://Player/Head.tscn")
+
+	# Add a player. Possible values 0 - 3. Returns a TextureRect with some extra goodies attached
+	var render = $Splitscreen.add_player(0)
+	var cam = head_class.instance()# $Player/Head
+	$Player.set_head(cam)
+	render.viewport.add_child(cam)
+	
+	#-------------------------------
+	render = $Splitscreen.add_player(1)
+
+	render = $Splitscreen.add_player(2)
+
+	self.set_first_person(true)#$Player.first_person_mode)
 	
 	# Preload explosions
 	self.big_explosion($DirectionalLight)

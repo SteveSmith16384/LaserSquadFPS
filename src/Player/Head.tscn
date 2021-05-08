@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="Head" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59345, 0 )
+
+[node name="FirstPersonCamera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.360422, 0 )
+current = true
+far = 25.0
+
+[node name="SpotLight" type="SpotLight" parent="FirstPersonCamera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.667556, 0 )
+spot_range = 20.0
+spot_angle = 40.0
+
+[node name="Muzzle" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317776, -0.961556 )
