@@ -12,7 +12,7 @@ func _process(delta):
 		get_tree().quit()
 		return
 
-	if Input.is_action_just_pressed("primary_fire"):
+	if Input.is_action_just_pressed("primary_fire0"):
 		#get_tree().change_scene("res://Main.tscn")
 		get_tree().change_scene("res://SelectPlayersScene.tscn")
 		return

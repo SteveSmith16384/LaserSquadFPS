@@ -10,8 +10,6 @@ var big_expl = preload("res://BigExplosion.tscn")
 var time_left : float
 var game_over = false
 
-var player
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -21,19 +19,18 @@ func _ready():
 	var player_class = preload("res://Player/Player.tscn")
 
 	# Add a player. Possible values 0 - 3. Returns a TextureRect with some extra goodies attached
-	var render = $Splitscreen.add_player(0)
-	player = player_class.instance()# $Player/Head
-	player.set_process_input(true)
-	#$Player.set_head(cam)
-	player.translation = $StartPosition.translation
-	render.viewport.add_child(player)
+	for player_id in Globals.player_nums:
+		var render = $Splitscreen.add_player(player_id)
+		#var player = Player.new(player_id)#player_class
+		var player = player_class.instance()
+		player.player_id = player_id
+		player.set_process_input(true)
+		player.translation = get_node("StartPosition" + str(player_id)).translation
+		render.viewport.add_child(player)
+
+	#self.set_process_input(false)
 	
-	#-------------------------------
-	render = $Splitscreen.add_player(1)
-
-	render = $Splitscreen.add_player(2)
-
-	self.set_first_person(true)#$Player.first_person_mode)
+	$HUD.show_targetter(true)
 	
 	# Preload explosions
 	self.big_explosion($DirectionalLight)
@@ -42,9 +39,9 @@ func _ready():
 	pass
 	
 
-func _input(event):
-	player._input(event)
-	pass
+#func _input(event): #  fires!
+#	#player._input(event)
+#	pass
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -143,11 +140,6 @@ func _on_Timer_timeout():
 	$AudioAmbience.play()
 	pass
 
-
-func set_first_person(fp : bool):
-	$HUD.show_targetter(fp)
-	pass
-	
 
 func get_patrol_points(droid : Spatial):
 	var dest = $SternersHouse.get_rnd_destination();

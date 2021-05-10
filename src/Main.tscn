@@ -76,8 +76,17 @@ autostart = true
 [node name="HudTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="StartPosition" type="Spatial" parent="."]
+[node name="StartPosition0" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94673, 0.546532, 7.65267 )
+
+[node name="StartPosition1" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94673, 0.546532, 0.594525 )
+
+[node name="StartPosition2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94673, 0.546532, 3.35056 )
+
+[node name="StartPosition3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94673, 0.546532, 5.23273 )
 
 [connection signal="timeout" from="AmbienceTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="HudTimer" to="." method="_on_HudTimer_timeout"]
