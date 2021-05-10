@@ -13,7 +13,8 @@ func _process(delta):
 		return
 
 	if Input.is_action_just_pressed("primary_fire"):
-		get_tree().change_scene("res://Main.tscn")
+		#get_tree().change_scene("res://Main.tscn")
+		get_tree().change_scene("res://SelectPlayersScene.tscn")
 		return
 
 	$LogoSpatial.rotation_degrees.x += 120 * delta

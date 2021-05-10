@@ -103,10 +103,6 @@ func update_camera():
 
 
 func _process(delta):
-	# Position camera
-	#head.translation = self.translation
-	#head.translation.y += .5
-	
 	if alive == false:
 		return
 		

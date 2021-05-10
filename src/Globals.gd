@@ -10,6 +10,8 @@ const PLAYER_INVINCIBLE = false and !RELEASE_MODE
 const START_TIME_SECONDS = 250
 
 var rnd : RandomNumberGenerator
+var player_nums = []
+
 
 func _ready():
 	rnd = RandomNumberGenerator.new()
