@@ -21,8 +21,9 @@ func anim(a):
 			an.set_loop(true)
 
 
-#func set_texture_to_white():
-#	var tex = load("res://Human/side_white.png")
-#	var c = $"Human Armature/Human_Mesh".get_surface_material_count()
-#	var mat2 = $"Human Armature/Human_Mesh".mesh.surface_get_material(0)
-#	mat2.albedo_texture = tex
+func set_texture_to_white():
+	var tex = load("res://Human/side_white.png")
+	#var c = $"Human Armature/Human_Mesh".get_surface_material_count()
+	var mat2 = $"Human Armature/Human_Mesh".mesh.surface_get_material(0)
+	#mat2.setup_local_to_scene()
+	mat2.albedo_texture = tex

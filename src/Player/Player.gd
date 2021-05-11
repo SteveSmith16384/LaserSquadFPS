@@ -209,7 +209,6 @@ func restart(trans):
 	
 func hit_by_bullet():
 	$Audio_Hit.play()
-	#set_first_person_mode(false)
 	self.target_dist = 6
 	main.player_hit()
 	pass

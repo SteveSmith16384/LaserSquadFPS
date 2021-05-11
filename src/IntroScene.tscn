@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Human/human.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Human/human_white.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Human/human_yellow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/target_logo.png" type="Texture" id=3]
 [ext_resource path="res://Assets/backgrounds/background1.png" type="Texture" id=4]

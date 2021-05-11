@@ -27,3 +27,7 @@ Since the app is not signed for a Mac (I don't even have a Mac), it shows "Appli
 * Shooting sfx: https://opengameart.org/content/4-projectile-launches
 * Explosions from https://opengameart.org/content/action-shooter-soundset-wwvi
 
+
+## Final Note
+If you really liked the original Laser Squad, check out Stellar Forces.
+

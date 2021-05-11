@@ -19,17 +19,28 @@ func _ready():
 	var player_class = preload("res://Player/Player.tscn")
 
 	# Add a player. Possible values 0 - 3. Returns a TextureRect with some extra goodies attached
-	for player_id in Globals.player_nums:
+	for player_id in range(0, 4):# Globals.player_nums:  todo - re-add
 		var render = $Splitscreen.add_player(player_id)
-		#var player = Player.new(player_id)#player_class
 		var player = player_class.instance()
 		player.player_id = player_id
-		player.set_process_input(true)
 		player.translation = get_node("StartPosition" + str(player_id)).translation
 		render.viewport.add_child(player)
-
-	#self.set_process_input(false)
-	
+		
+		# Set player colours
+		if player_id == 1:
+			var human_white_class = preload("res://Human/human_white.tscn")
+			var human_white = human_white_class.instance()
+			human_white.name = "Human"
+			player.add_child(human_white)
+		else:
+			var human_yellow_class = preload("res://Human/human_yellow.tscn")
+			var human_yellow = human_yellow_class.instance()
+			human_yellow.name = "Human"
+			player.add_child(human_yellow)
+			pass
+			
+		player.get_node("Human").scale = Vector3(0.2, 0.2, 0.2)
+		
 	$HUD.show_targetter(true)
 	
 	# Preload explosions
