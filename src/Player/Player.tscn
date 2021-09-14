@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/sfx/launches/slimeball.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/sfx/deathscream1.wav" type="AudioStream" id=4]
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.328916, 0.697, 0.344389 )
 
 [node name="Player" type="KinematicBody" groups=[
@@ -31,7 +31,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317776, -0.961556 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318994, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 
 [node name="Audio_Hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

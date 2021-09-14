@@ -1,14 +1,13 @@
 class_name Main
 extends Spatial
 
-var invincible = false
-
 var tiny_expl = preload("res://TinyExplosion.tscn")	
 var small_expl = preload("res://SmallExplosion.tscn")	
 var big_expl = preload("res://BigExplosion.tscn")	
 
 var time_left : float
 var game_over = false
+var players = {};
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -19,7 +18,7 @@ func _ready():
 	var player_class = preload("res://Player/Player.tscn")
 
 	# Add a player. Possible values 0 - 3. Returns a TextureRect with some extra goodies attached
-	for player_id in range(0, 4):# Globals.player_nums:  todo - re-add
+	for player_id in Globals.player_nums: #range(0, 4):#  todo - re-add
 		var render = $Splitscreen.add_player(player_id)
 		var player = player_class.instance()
 		player.player_id = player_id
@@ -41,6 +40,9 @@ func _ready():
 			
 		player.get_node("Human").scale = Vector3(0.2, 0.2, 0.2)
 		
+		players[player_id] = player
+		pass
+		
 	$HUD.show_targetter(true)
 	
 	# Preload explosions
@@ -50,9 +52,10 @@ func _ready():
 	pass
 	
 
-#func _input(event): #  fires!
-#	#player._input(event)
-#	pass
+func _input(event): #  fires!
+	players[0]._input(event)
+	pass
+	
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -80,24 +83,12 @@ func player_hit():
 	
 	
 func player_killed():
-	if Globals.PLAYER_INVINCIBLE:
-		return
-		
-	if $Player.alive == false:
-		return
-	
-	if invincible:
-		return
-		
-	$Player/Human.anim("Die")
-	$Player.alive = false
-	self.small_explosion($Player)
-	game_lost()
+	#self.small_explosion()
+#	game_lost()
 	pass
 	
 	
 func tiny_explosion(spatial):
-	#var expl = load("res://TinyExplosion.tscn")	
 	var i = tiny_expl.instance()
 	add_child(i)
 	i.translation = spatial.global_transform.origin
@@ -105,7 +96,6 @@ func tiny_explosion(spatial):
 	
 	
 func small_explosion(spatial):
-	#var small_expl = load("res://SmallExplosion.tscn")	
 	var i = small_expl.instance()
 	add_child(i)
 	i.translation = spatial.global_transform.origin
@@ -113,7 +103,6 @@ func small_explosion(spatial):
 	
 	
 func big_explosion(spatial):
-	#var big_expl = load("res://BigExplosion.tscn")	
 	var i = big_expl.instance()
 	add_child(i)
 	i.translation = spatial.global_transform.origin
@@ -141,7 +130,7 @@ func game_lost():
 
 func sterner_killed():
 	$Sounds/VictoryMusic.play()
-	invincible = true
+	#invincible = true
 	$HUD.show_well_done()
 	game_over = true
 	pass
@@ -160,4 +149,4 @@ func get_patrol_points(droid : Spatial):
 
 func _on_HudTimer_timeout():
 	$HUD.update_time_label(time_left)
-	pass # Replace with function body.
+	pass

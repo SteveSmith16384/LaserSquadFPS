@@ -18,7 +18,7 @@ func _process(delta):
 			Globals.player_nums.push_back(1)
 		pass
 
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump0"):
 		get_tree().change_scene("res://Main.tscn")
 		pass
 

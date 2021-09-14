@@ -10,7 +10,7 @@ var main# : Main
 var player_id
 var head : Spatial
 var first_person_camera : Camera
-
+var invincible = false
 var velocity = Vector3()
 var camera_x_rotation = 0
 var start_y : float
@@ -37,11 +37,6 @@ var laser_reloading = false
 
 var bullet_class
 
-#func _init(_player_num : int):
-#	player_num = _player_num
-#	pass
-	
-	
 func _ready():
 	main = get_tree().get_root().get_node("Main")
 
@@ -93,7 +88,7 @@ func _process(delta):
 	if alive == false:
 		return
 		
-	if Input.is_action_pressed("primary_fire") and can_laser_fire:
+	if Input.is_action_pressed("primary_fire" + str(player_id)) and can_laser_fire:
 		if current_ammo > 0 and not laser_reloading:
 			fire_bullet()
 		elif not laser_reloading:
@@ -109,6 +104,8 @@ func get_eyes_position():
 	
 	
 func fire_bullet():
+	print("Shooting!")
+	
 	can_laser_fire = false
 	current_ammo -= 1
 	
@@ -153,14 +150,14 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_forward" + str(player_id)):
 		play_footstep = true
 		direction -= head_basis.z
-	elif Input.is_action_pressed("move_backward"):
+	elif Input.is_action_pressed("move_backward" + str(player_id)):
 		play_footstep = true
 		direction += head_basis.z
 	
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left" + str(player_id)):
 		play_footstep = true
 		direction -= head_basis.x
-	elif Input.is_action_pressed("move_right"):
+	elif Input.is_action_pressed("move_right" + str(player_id)):
 		play_footstep = true
 		direction += head_basis.x
 	
@@ -208,8 +205,16 @@ func restart(trans):
 	
 	
 func hit_by_bullet():
+	if alive == false:
+		return
+	
+	if invincible:
+		return
+		
+	$Human.anim("Die")
+	alive = false
 	$Audio_Hit.play()
-	self.target_dist = 6
+
 	main.player_hit()
 	pass
 	
