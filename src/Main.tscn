@@ -74,9 +74,9 @@ wait_time = 10.0
 autostart = true
 
 [node name="SternersHouse" parent="." instance=ExtResource( 2 )]
-visible = false
 
 [node name="EmptyMap" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="HudTimer" type="Timer" parent="."]
 autostart = true

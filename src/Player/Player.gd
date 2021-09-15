@@ -10,6 +10,8 @@ var main# : Main
 var player_id
 var head : Spatial
 var first_person_camera : Camera
+var third_person_camera : Camera
+
 var invincible = false
 var velocity = Vector3()
 var camera_x_rotation = 0
@@ -48,6 +50,7 @@ func _ready():
 
 	head = $Head
 	first_person_camera = $Head/FirstPersonCamera
+	third_person_camera = find_node("ThirdPersonCamera")
 
 	bullet_class = preload("res://Bullet.tscn")
 	pass

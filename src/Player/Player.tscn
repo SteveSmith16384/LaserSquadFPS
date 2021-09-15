@@ -41,3 +41,5 @@ volume_db = -6.058
 
 [node name="Audio_Shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="ThirdPersonCamera" type="Camera" parent="."]

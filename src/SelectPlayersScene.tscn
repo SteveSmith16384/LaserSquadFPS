@@ -8,8 +8,8 @@ script = ExtResource( 1 )
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="TextEdit" type="TextEdit" parent="Node2D"]
-margin_right = 469.0
-margin_bottom = 195.0
+margin_right = 1009.0
+margin_bottom = 586.0
 readonly = true
 __meta__ = {
 "_edit_use_anchors_": false

@@ -52,8 +52,9 @@ func _ready():
 	pass
 	
 
-func _input(event): #  fires!
-	players[0]._input(event)
+func _input(event):
+	if Globals.SINGLE_PLAYER_MODE:
+		players[0]._input(event)
 	pass
 	
 	
