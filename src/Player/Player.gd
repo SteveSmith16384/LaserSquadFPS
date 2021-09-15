@@ -21,13 +21,15 @@ var alive = true
 var play_footstep : bool = false
 var actually_play_footstep : bool = true
 
+var first_person_mode = true
+
 # Third person cam settings
 var mouseSensitivity = 0.1
 var yaw_y : float = 0.0
 var pitch_x : float = -45.0
 var origin : Vector3 = Vector3()
-#var target_dist : float = 0#6.0
-#var actual_dist : float = 0.0
+var target_dist : float = 6.0
+var actual_dist : float = 0
 
 # Gun settings
 const laser_fire_rate = 0.2
@@ -37,28 +39,26 @@ var current_ammo = clip_size
 var can_laser_fire = true
 var laser_reloading = false
 
-var bullet_class
+var bullet_class = preload("res://Bullet.tscn")
 
 func _ready():
 	main = get_tree().get_root().get_node("Main")
 
 	start_y = self.translation.y
 
-	update_camera()
-
 	current_ammo = clip_size
 
 	head = $Head
 	first_person_camera = $Head/FirstPersonCamera
-	third_person_camera = find_node("ThirdPersonCamera")
+	third_person_camera = $ThirdPersonCamera
 
-	bullet_class = preload("res://Bullet.tscn")
+	update_camera()
 	pass
 	
 
-func _unhandled_input(event):
-	_input(event)
-	pass
+#func _unhandled_input(event): Doesn't fire
+#	_input(event)
+#	pass
 	
 	
 func _input(event):
@@ -80,10 +80,17 @@ func _input(event):
 
 
 func update_camera():
+	third_person_camera.set_rotation(Vector3(deg2rad(pitch_x), deg2rad(yaw_y), 0.0))
+	third_person_camera.set_translation(origin - actual_dist * third_person_camera.project_ray_normal(get_viewport().get_visible_rect().size * 0.5))
+	
 	if alive:
-		if head:
-			var rot = head.rotation_degrees.y
-			$Human.rotation_degrees.y = rot + 180
+		if first_person_mode:
+			if head:
+				var rot = head.rotation_degrees.y
+				$Human.rotation_degrees.y = rot + 180
+		else:
+			#$MeshSpatial.rotation_degrees.y = third_person_camera.rotation_degrees.y
+			$Human.rotation_degrees.y = third_person_camera.rotation_degrees.y + 180
 	pass
 
 
@@ -139,6 +146,11 @@ func reload():
 	
 
 func _physics_process(delta):
+	if actual_dist != target_dist:
+		actual_dist += (target_dist-actual_dist) * delta * 3
+		self.update_camera()
+		set_first_person_mode(actual_dist <= 1)
+		
 	if alive == false:
 		velocity.x = 0
 		velocity.z = 0
@@ -147,7 +159,11 @@ func _physics_process(delta):
 		
 	play_footstep = false
 	
-	var head_basis = head.get_global_transform().basis
+	var head_basis
+	if first_person_mode:
+		head_basis = head.get_global_transform().basis
+	else:
+		head_basis = third_person_camera.get_global_transform().basis
 		
 	var direction = Vector3()
 	if Input.is_action_pressed("move_forward" + str(player_id)):
@@ -184,6 +200,23 @@ func _physics_process(delta):
 	pass
 	
 	
+func set_first_person_mode(b):
+	if first_person_mode == b:
+		return
+		
+	first_person_mode = b
+
+	#find_node("MeshSpatial").visible = !first_person_mode
+	$Human.visible = !first_person_mode
+	#main.set_first_person(first_person_mode)
+
+	self.first_person_camera.current = first_person_mode
+	self.third_person_camera.current = !first_person_mode
+	
+	self.update_camera();
+	pass
+
+
 func play_footstep():
 	return# A bit annoying?
 	
@@ -214,7 +247,7 @@ func hit_by_bullet():
 	if invincible:
 		return
 		
-	$Human.anim("Die")
+	$Human.anim("Die") # how this not error?
 	alive = false
 	$Audio_Hit.play()
 
