@@ -5,6 +5,7 @@ const RELEASE_MODE = false
 
 const SINGLE_PLAYER_MODE = false
 const THIRD_PERSON_MODE = true
+const USE_MOUSE = false
 
 const DEBUG_START_POS = false and !RELEASE_MODE # If true, uses StartPos in main for player's start position
 const NO_ENEMIES = false and !RELEASE_MODE

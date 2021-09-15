@@ -28,7 +28,7 @@ var mouseSensitivity = 0.1
 var yaw_y : float = 0.0
 var pitch_x : float = -45.0
 var origin : Vector3 = Vector3()
-var target_dist : float = 6.0
+var target_dist : float = 3.0
 var actual_dist : float = 0
 
 # Gun settings
@@ -61,21 +61,21 @@ func _ready():
 #	pass
 	
 	
-func _input(event):
-	if event is InputEventMouseMotion:
-		head.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
-		
-		var x_delta = event.relative.y * mouse_sensitivity
-		if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90: 
-			first_person_camera.rotate_x(deg2rad(-x_delta))
-			camera_x_rotation += x_delta
-#
-		# 3rd-person cam
-		var mouseVec : Vector2 = event.get_relative()
-		yaw_y = head.rotation_degrees.y#fmod(yaw_y - mouseVec.x * mouseSensitivity, 360.0)
-		pitch_x = max(min(pitch_x - mouseVec.y * mouseSensitivity, 90.0), -90.0)
-		update_camera()
-
+func _input(event): #  Gets called by main!
+	if Globals.USE_MOUSE:
+		if event is InputEventMouseMotion:
+			head.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
+			
+			var x_delta = event.relative.y * mouse_sensitivity
+			if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90: 
+				first_person_camera.rotate_x(deg2rad(-x_delta))
+				camera_x_rotation += x_delta
+	#
+			# Move 3rd-person cam
+			var mouseVec : Vector2 = event.get_relative()
+			yaw_y = head.rotation_degrees.y#fmod(yaw_y - mouseVec.x * mouseSensitivity, 360.0)
+			pitch_x = max(min(pitch_x - mouseVec.y * mouseSensitivity, 90.0), -90.0)
+			update_camera()
 	pass
 
 
@@ -98,6 +98,15 @@ func _process(delta):
 	if alive == false:
 		return
 		
+	if Globals.USE_MOUSE == false:
+		if Input.is_action_pressed("turn_left" + str(player_id)):
+			#head.rotate_y(deg2rad(-10))
+			yaw_y += 10
+		elif Input.is_action_pressed("turn_right" + str(player_id)):
+			#head.rotate_y(deg2rad(10))
+			yaw_y -= 10
+		pass
+
 	if Input.is_action_pressed("primary_fire" + str(player_id)) and can_laser_fire:
 		if current_ammo > 0 and not laser_reloading:
 			fire_bullet()
@@ -233,7 +242,7 @@ func play_footstep():
 	pass
 
 
-func restart(trans):
+func restart(trans: Vector3):
 	self.translation = trans
 	self.translation.y = start_y
 	alive = true

@@ -159,6 +159,48 @@ move_backward3={
 "deadzone": 0.5,
 "events": [  ]
 }
+turn_left0={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+ ]
+}
+turn_right0={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+turn_left1={
+"deadzone": 0.5,
+"events": [  ]
+}
+turn_right1={
+"deadzone": 0.5,
+"events": [  ]
+}
+turn_left2={
+"deadzone": 0.5,
+"events": [  ]
+}
+turn_right2={
+"deadzone": 0.5,
+"events": [  ]
+}
+turn_left3={
+"deadzone": 0.5,
+"events": [  ]
+}
+turn_right3={
+"deadzone": 0.5,
+"events": [  ]
+}
+primary_fire2={
+"deadzone": 0.5,
+"events": [  ]
+}
+primary_fire3={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [rendering]
 
