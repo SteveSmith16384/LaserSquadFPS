@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://DebuggingSphere.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/sfx/launches/slimeball.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/sfx/deathscream1.wav" type="AudioStream" id=4]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.328916, 0.697, 0.344389 )
+extents = Vector3( 0.25, 0.5, 0.25 )
 
 [node name="Player" type="KinematicBody" groups=[
 "Player",
@@ -28,6 +29,8 @@ spot_angle = 40.0
 
 [node name="Muzzle" type="Spatial" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317776, -0.961556 )
+
+[node name="DebuggingSphere" parent="Head/Muzzle" instance=ExtResource( 2 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318994, 0 )

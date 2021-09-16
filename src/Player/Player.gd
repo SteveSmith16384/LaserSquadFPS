@@ -85,9 +85,9 @@ func update_camera():
 	
 	if alive:
 		if first_person_mode:
-			if head:
-				var rot = head.rotation_degrees.y
-				$Human.rotation_degrees.y = rot + 180
+#			if head:
+			var rot = head.rotation_degrees.y
+			$Human.rotation_degrees.y = rot + 180
 		else:
 			#$MeshSpatial.rotation_degrees.y = third_person_camera.rotation_degrees.y
 			$Human.rotation_degrees.y = third_person_camera.rotation_degrees.y + 180
@@ -100,11 +100,11 @@ func _process(delta):
 		
 	if Globals.USE_MOUSE == false:
 		if Input.is_action_pressed("turn_left" + str(player_id)):
-			#head.rotate_y(deg2rad(-10))
-			yaw_y += 10
+			head.rotate_y(deg2rad(4))
+			yaw_y += 4
 		elif Input.is_action_pressed("turn_right" + str(player_id)):
-			#head.rotate_y(deg2rad(10))
-			yaw_y -= 10
+			head.rotate_y(deg2rad(-4))
+			yaw_y -= 4
 		pass
 
 	if Input.is_action_pressed("primary_fire" + str(player_id)) and can_laser_fire:
@@ -123,12 +123,13 @@ func get_eyes_position():
 	
 	
 func fire_bullet():
-	print("Shooting!")
+#	print("Shooting!")
 	
 	can_laser_fire = false
 	current_ammo -= 1
 	
 	var bullet : Bullet = bullet_class.instance()
+	bullet.shooter = self
 	main.add_child(bullet)
 	$Audio_Shoot.play()
 	

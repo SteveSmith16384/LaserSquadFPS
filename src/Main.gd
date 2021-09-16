@@ -39,7 +39,8 @@ func _ready():
 			
 		render.viewport.add_child(player)
 
-		player.get_node("Human").scale = Vector3(0.2, 0.2, 0.2)
+		player.get_node("Human").scale = Vector3(0.3, 0.3, 0.3)
+		player.get_node("Human").translation.y -= 0.5
 		
 		players[player_id] = player
 		pass
