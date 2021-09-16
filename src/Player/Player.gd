@@ -101,12 +101,17 @@ func _process(delta):
 	if Globals.USE_MOUSE == false:
 		if Input.is_action_pressed("turn_left" + str(player_id)):
 			head.rotate_y(deg2rad(4))
-			yaw_y += 4
+			yaw_y = rad2deg(head.rotation.y)# += 4
 		elif Input.is_action_pressed("turn_right" + str(player_id)):
 			head.rotate_y(deg2rad(-4))
-			yaw_y -= 4
+			yaw_y = rad2deg(head.rotation.y)# -= 4
 		pass
 
+	if Input.is_action_pressed("zoom_in" + str(player_id)):
+		target_dist += 1
+	elif Input.is_action_pressed("zoom_out" + str(player_id)):
+		target_dist -= 1
+		
 	if Input.is_action_pressed("primary_fire" + str(player_id)) and can_laser_fire:
 		if current_ammo > 0 and not laser_reloading:
 			fire_bullet()

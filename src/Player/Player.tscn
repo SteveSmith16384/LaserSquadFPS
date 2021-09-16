@@ -31,6 +31,7 @@ spot_angle = 40.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.317776, -0.961556 )
 
 [node name="DebuggingSphere" parent="Head/Muzzle" instance=ExtResource( 2 )]
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318994, 0 )
