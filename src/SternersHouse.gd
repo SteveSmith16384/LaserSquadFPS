@@ -37,8 +37,3 @@ func get_route(start, end):
 		print("No route!")
 	route.append(end)
 	return route
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

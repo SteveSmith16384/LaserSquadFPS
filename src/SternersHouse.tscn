@@ -1911,29 +1911,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.258, 0, -9.32892 )
 [node name="Plants1_Red4" parent="." instance=ExtResource( 32 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.658, 0, -10.9289 )
 
-[node name="EnemyDroid1" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
+[node name="EnemyDroid1" parent="." groups=["droid"] instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
 
-[node name="EnemyDroid2" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
+[node name="EnemyDroid2" parent="." groups=["droid"] instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
 
-[node name="EnemyDroid3" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
+[node name="EnemyDroid3" parent="." groups=["droid"] instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
 
-[node name="EnemyDroid4" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
+[node name="EnemyDroid4" parent="." groups=["droid"] instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
 
-[node name="EnemyDroid5" parent="." groups=[
-"droid",
-] instance=ExtResource( 21 )]
+[node name="EnemyDroid5" parent="." groups=["droid"] instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 4.8 )
 
 [node name="SternerRegnix" parent="." instance=ExtResource( 33 )]
